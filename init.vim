@@ -49,7 +49,6 @@ set shiftwidth=2
 set autoindent
 set encoding=UTF-8
 set noswapfile
-"filetype plugin indent on
 
 
 inoremap <silent> <unique> <Esc> <Esc>:set imsearch=0 iminsert=0<CR>
