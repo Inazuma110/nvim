@@ -1,0 +1,167 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+# 透過
+[[plugins]]
+repo = 'Inazuma110/air.vim'
+
+# 非同期実行
+[[plugins]]
+repo = 'w0rp/ale'
+
+# win resize
+[[plugins]]
+repo = 'simeji/winresizer'
+hook_add = '''
+  " window resize
+  let g:winresizer_vert_resize = 1
+  let g:winresizer_horiz_resize = 1
+'''
+# tomlのハイライト
+[[plugins]]
+repo = 'cespare/vim-toml'
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+
+# ファイルアイコンを入れる
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+
+# ファイルタイプ?
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'
+
+[[plugins]]
+repo = 'Shougo/vimfiler.vim'
+
+# 日本語がなんかいい感じになる
+[[plugins]]
+repo = 'tyru/eskk.vim'
+
+# ステータスバーをいい感じに
+[[plugins]]
+#repo = 'vim-airline/vim-airline'
+repo = 'itchyny/lightline.vim'
+hook_add = '''
+  let g:lightline = {
+    \ 'colorscheme': 'wombat',
+    \ 'active': {
+    \   'left': [ [ 'mode', 'paste', 'unko' ],
+    \             [ 'fugitive', 'gitgutter', 'filename' ] ]
+    \ },
+    \ 'component_function': {
+    \   'fugitive': 'LightLineFugitive',
+    \   'readonly': 'LightLineReadonly',
+    \   'modified': 'LightLineModified',
+    \   'filename': 'LightLineFilename',
+    \   'filetype': 'LightLineFiletype',
+    \   'fileformat': 'LightLineFileformat',
+    \   'fileencoding': 'LightlineFileencoding',
+    \   'mode': 'LightlineMode', 
+    \   'gitgutter': 'MyGitGutter',
+    \ }, 
+  \ }
+  
+  function! LightLineModified()
+    return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+  endfunction
+  
+  function! LightLineReadonly()
+      if &filetype == "help"
+          return ""
+      elseif &readonly
+          return ""
+      else
+          return ""
+      endif
+  endfunction
+  
+  function! LightLineFugitive()
+      if exists("*fugitive#head")
+          let _ = fugitive#head()
+        return strlen(_) ? '⭠ '._ : ''
+      endif
+      return ''
+  endfunction
+  
+  function! LightLineFilename()
+      return ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
+      \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
+      \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
+  endfunction
+  
+  function! LightLineFiletype()
+    return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+  endfunction
+  
+  function! LightLineFileformat()
+    return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
+  endfunction
+  
+  function! LightlineFileencoding()
+    return winwidth(0) > 70 ? (&fenc !=# '' ? &fenc : &enc) : ''
+  endfunction
+  
+  function! LightlineMode()
+    return winwidth(0) > 60 ? lightline#mode() : ''
+  endfunction
+  
+  function! MyGitGutter()
+    if ! exists('*GitGutterGetHunkSummary')
+          \ || ! get(g:, 'gitgutter_enabled', 0)
+          \ || winwidth('.') <= 90
+      return ''
+    endif
+    let symbols = [
+          \ g:gitgutter_sign_added . ' ',
+          \ g:gitgutter_sign_modified . ' ',
+          \ g:gitgutter_sign_removed . ' '
+          \ ]
+    let hunks = GitGutterGetHunkSummary()
+    let ret = []
+    for i in [0, 1, 2]
+      if hunks[i] > 0
+        call add(ret, symbols[i] . hunks[i])
+      endif
+    endfor
+    return join(ret, ' ')
+  endfunction
+'''
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+# 差分行表示 
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+hook_add = '''
+  let g:gitgutter_sign_added = '✚'
+  let g:gitgutter_sign_modified = '➜'
+  let g:gitgutter_sign_removed = '✘'
+'''
+
+# ファイルアイコンをつける
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+hook_add = 'let g:WebDevIconsUnicodeDecorateFolderNodes = 1'
+ 
+[[plugins]]
+repo = 'easymotion/vim-easymotion'
+
+[[plugins]]
+repo = 'vim-scripts/fcitx.vim'
+
+[[plugins]] # カラースキーマ
+repo =  'jacoborus/tender.vim'
+hook_add = '''
+  " colorscheme 設定は source 後に行う必要があるので VimEnter で行う。
+  " 但し Colorscheme イベントの発生が抑制されないよう nented を付ける。
+  au VimEnter * nested colorscheme tender
+'''
+
+# カッコに色付け
+[[plugins]]
+repo = 'luochen1990/rainbow'
+hook_add = 'let g:rainbow_active = 1'
+
