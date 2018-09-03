@@ -33,6 +33,9 @@ endif
 " py3 support
 let g:python3_host_prog = '/usr/bin/python3'
 
+" snippets
+let g:neosnippet#snippets_directory='~/nvim/snippets'
+
 syntax on
 
 filetype plugin indent on
@@ -49,6 +52,9 @@ set shiftwidth=2
 set autoindent
 set encoding=UTF-8
 set noswapfile
+
+" 行末の空白削除
+autocmd BufWritePre * :%s/\s\+$//ge
 
 
 inoremap <silent> <unique> <Esc> <Esc>:set imsearch=0 iminsert=0<CR>

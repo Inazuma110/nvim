@@ -1,7 +1,33 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
-# 透過
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+hook_add = '''
+" Plugin key-mappings.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+"imap <expr><TAB>
+" \ pumvisible() ? "\<C-n>" :
+" \ neosnippet#expandable_or_jumpable() ?
+" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
+'''
+
 [[plugins]]
 repo = 'Inazuma110/air.vim'
 
@@ -32,12 +58,9 @@ repo = 'scrooloose/nerdtree'
 [[plugins]]
 repo = 'Shougo/context_filetype.vim'
 
-[[plugins]]
-repo = 'Shougo/vimfiler.vim'
+ [[plugins]]
+ repo = 'Shougo/vimfiler.vim'
 
-# 日本語がなんかいい感じになる
-[[plugins]]
-repo = 'tyru/eskk.vim'
 
 # ステータスバーをいい感じに
 [[plugins]]
@@ -47,7 +70,7 @@ hook_add = '''
   let g:lightline = {
     \ 'colorscheme': 'wombat',
     \ 'active': {
-    \   'left': [ [ 'mode', 'paste', 'unko' ],
+    \   'left': [ [ 'mode', 'paste' ],
     \             [ 'fugitive', 'gitgutter', 'filename' ] ]
     \ },
     \ 'component_function': {
@@ -61,7 +84,9 @@ hook_add = '''
     \   'mode': 'LightlineMode', 
     \   'gitgutter': 'MyGitGutter',
     \ }, 
-  \ }
+  \}
+
+
   
   function! LightLineModified()
     return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
