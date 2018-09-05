@@ -34,7 +34,7 @@ endif
 let g:python3_host_prog = '/usr/bin/python3'
 
 " snippets
-let g:neosnippet#snippets_directory='~/nvim/snippets'
+let g:neosnippet#snippets_directory='~/.config/nvim/snippets'
 
 syntax on
 
@@ -56,6 +56,12 @@ set noswapfile
 " 行末の空白削除
 autocmd BufWritePre * :%s/\s\+$//ge
 
+autocmd FileType neosnippet setlocal noexpandtab
+
+" augroup snipIndent
+"   autocmd!
+"   autocmd FileType neosnippet setlocal tabstop=2 noexpandtab
+" augroup END
 
 inoremap <silent> <unique> <Esc> <Esc>:set imsearch=0 iminsert=0<CR>
 augroup MyXML
@@ -79,6 +85,4 @@ nnoremap sk <C-w>k
 nnoremap sl <C-w>l
 nnoremap sh <C-w>h
 "nnoremap tn :<C-u>tabnew<CR>
-"terminal key map
-tnoremap <silent> <C-[> <C-\><C-n>
 
