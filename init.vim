@@ -86,3 +86,4 @@ nnoremap sl <C-w>l
 nnoremap sh <C-w>h
 "nnoremap tn :<C-u>tabnew<CR>
 
+tnoremap <silent> <C-[> <C-\><C-n>
