@@ -1,0 +1,18 @@
+	printf("${1:%d}\\n",${2});
+
+snippet	printf
+abbr	printf
+snippet	scanf
+abbr	scanf
+	scanf("${1:%d}",${2});
+
+snippet	for loop
+abbr	for
+	for (int ${1:i} = 0; $1 < ${2:count}; $1++){
+		${3:/* code */}
+	}
+
+snippet	return
+abbr	return
+	return ${1}
+
