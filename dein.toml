@@ -203,3 +203,12 @@ hook_add = '''
   xmap ga <Plug>(EasyAlign)
   nmap ga <Plug>(EasyAlign)
 '''
+
+[[plugins]]
+repo = 'git@github.com:Yggdroot/indentLine.git'
+hook_add = '''
+  let g:indentLine_char = '▏'
+  let g:indentLine_first_char = '▏'
+  let g:indentLine_showFirstIndentLevel = -1
+'''
+

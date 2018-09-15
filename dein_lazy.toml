@@ -8,6 +8,7 @@ repo = 'kana/vim-smartchr'
 hook_add = '''
   inoremap <buffer> <expr> , smartchr#loop(', ', ',')
 '''
+on_i = 1
 
 
  # 補完
