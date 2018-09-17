@@ -3,10 +3,11 @@ augroup MyAutoCmd
 autocmd!
 augroup END
 
-if !&compatible
+" viとの互換を切る
+if &compatible
   set nocompatible
 endif
-" dein settings {{{
+
 " dein自体の自動インストール
 let s:cache_home = empty($XDG_CACHE_HOME) ? expand('~/.cache') : $XDG_CACHE_HOME
 let s:dein_dir = s:cache_home . '/dein'
@@ -15,6 +16,7 @@ if !isdirectory(s:dein_repo_dir)
   call system('git clone https://github.com/Shougo/dein.vim ' . shellescape(s:dein_repo_dir))
 endif
 let &runtimepath = s:dein_repo_dir .",". &runtimepath
+
 " プラグイン読み込み＆キャッシュ作成
 let s:toml_file = fnamemodify(expand('<sfile>'), ':h').'/dein.toml'
 let s:toml_lazyfile = fnamemodify(expand('<sfile>'), ':h').'/dein_lazy.toml'
@@ -25,65 +27,16 @@ if dein#load_state(s:dein_dir)
   call dein#end()
   call dein#save_state()
 endif
+
 " 不足プラグインの自動インストール
 if has('vim_starting') && dein#check_install()
   call dein#install()
 endif
 
-" py3 support
-let g:python3_host_prog = '/usr/bin/python3'
+let g:HOME = expand('~')
+" path/to/nvim_dir
+let g:NVIM_HOME = g:HOME . '/.config/nvim'
 
-" snippets
-let g:neosnippet#snippets_directory='~/.config/nvim/snippets'
-
-syntax on
-
-filetype plugin indent on
-set sh=bash
-set t_Co=256
-set relativenumber
-set number
-set smartindent
-set showmatch
-set clipboard+=unnamedplus
-set expandtab
-set tabstop+=2
-set shiftwidth=2
-set autoindent
-set encoding=UTF-8
-set noswapfile
-
-" 行末の空白削除
-autocmd BufWritePre * :%s/\s\+$//ge
-
-autocmd FileType neosnippet setlocal noexpandtab
-
-" augroup snipIndent
-"   autocmd!
-"   autocmd FileType neosnippet setlocal tabstop=2 noexpandtab
-" augroup END
-
-inoremap <silent> <unique> <Esc> <Esc>:set imsearch=0 iminsert=0<CR>
-augroup MyXML
-  autocmd!
-  autocmd Filetype xml inoremap <buffer> </ </<C-x><C-o>
-  autocmd Filetype html inoremap <buffer> </ </<C-x><C-o>
-augroup END
-
-" キーマップ
-inoremap <silent> jj <ESC>
-inoremap <silent> っｊ <ESC>
-inoremap <silent> jk <ESC>
-inoremap <silent> ｊｋ <ESC>
-inoremap <silent> kj <ESC>
-inoremap <silent> ｋｊ <ESC>
-inoremap <silent> kk <ESC>
-inoremap <silent> っｋ <ESC>
-
-nnoremap sj <C-w>j
-nnoremap sk <C-w>k
-nnoremap sl <C-w>l
-nnoremap sh <C-w>h
-"nnoremap tn :<C-u>tabnew<CR>
-
-tnoremap <silent> <C-[> <C-\><C-n>
+execute('source ' . g:NVIM_HOME . '/rc/path.vim')
+execute('source ' . g:NVIM_HOME . '/rc/keymap.vim')
+execute('source ' . g:NVIM_HOME . '/rc/opt.vim')
