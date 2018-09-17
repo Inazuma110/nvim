@@ -3,6 +3,7 @@ augroup MyAutoCmd
 autocmd!
 augroup END
 
+
 " viとの互換を切る
 if &compatible
   set nocompatible
@@ -18,11 +19,15 @@ endif
 let &runtimepath = s:dein_repo_dir .",". &runtimepath
 
 " プラグイン読み込み＆キャッシュ作成
-let s:toml_file = fnamemodify(expand('<sfile>'), ':h').'/dein.toml'
-let s:toml_lazyfile = fnamemodify(expand('<sfile>'), ':h').'/dein_lazy.toml'
+let s:toml_file = fnamemodify(expand('<sfile>'), ':h').'/dein/dein.toml'
+let s:toml_statusline = fnamemodify(expand('<sfile>'), ':h').'/dein/lightline.toml'
+let s:toml_complete = fnamemodify(expand('<sfile>'), ':h').'/dein/complete.toml'
+let s:toml_lazyfile = fnamemodify(expand('<sfile>'), ':h').'/dein/dein_lazy.toml'
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
   call dein#load_toml(s:toml_file)
+  call dein#load_toml(s:toml_statusline)
+  call dein#load_toml(s:toml_complete)
   call dein#load_toml(s:toml_lazyfile)
   call dein#end()
   call dein#save_state()
