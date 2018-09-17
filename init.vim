@@ -3,7 +3,6 @@ augroup MyAutoCmd
 autocmd!
 augroup END
 
-
 " viとの互換を切る
 if &compatible
   set nocompatible
@@ -42,6 +41,6 @@ let g:HOME = expand('~')
 " path/to/nvim_dir
 let g:NVIM_HOME = g:HOME . '/.config/nvim'
 
-execute('source ' . g:NVIM_HOME . '/rc/path.vim')
-execute('source ' . g:NVIM_HOME . '/rc/keymap.vim')
-execute('source ' . g:NVIM_HOME . '/rc/opt.vim')
+execute('source ' . g:NVIM_HOME . '/settings/path.vim')
+execute('source ' . g:NVIM_HOME . '/settings/keymap.vim')
+execute('source ' . g:NVIM_HOME . '/settings/option.vim')
