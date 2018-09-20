@@ -22,3 +22,6 @@ on_i = 1
 repo = 'cohama/lexima.vim'
 on_i = 1
 
+# [[plugins]]
+# repo = 'git@github.com:Floobits/floobits-neovim.git'
+

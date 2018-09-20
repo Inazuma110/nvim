@@ -19,7 +19,7 @@ let &runtimepath = s:dein_repo_dir .",". &runtimepath
 
 " プラグイン読み込み＆キャッシュ作成
 let s:toml_file = fnamemodify(expand('<sfile>'), ':h').'/dein/dein.toml'
-let s:toml_statusline = fnamemodify(expand('<sfile>'), ':h').'/dein/lightline.toml'
+let s:toml_statusline = fnamemodify(expand('<sfile>'), ':h').'/dein/statusline.toml'
 let s:toml_complete = fnamemodify(expand('<sfile>'), ':h').'/dein/complete.toml'
 let s:toml_lazyfile = fnamemodify(expand('<sfile>'), ':h').'/dein/dein_lazy.toml'
 if dein#load_state(s:dein_dir)
