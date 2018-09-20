@@ -92,3 +92,6 @@ hook_add = '''
   " let g:indentLine_showFirstIndentLevel = -1
 '''
 
+[[plugins]]
+repo = 'git@github.com:thinca/vim-quickrun.git'
+
