@@ -58,8 +58,9 @@ repo = 'easymotion/vim-easymotion'
 repo = 'vim-scripts/fcitx.vim'
 
 [[plugins]] # カラースキーマ
-repo =  'jacoborus/tender.vim'
+repo =  'git@github.com:jacoborus/tender.vim.git'
 hook_add = '''
+  au ColorScheme * highlight LineNr ctermfg=10
   " colorscheme 設定は source 後に行う必要があるので VimEnter で行う。
   " 但し Colorscheme イベントの発生が抑制されないよう nented を付ける。
   au VimEnter * nested colorscheme tender
@@ -94,4 +95,5 @@ hook_add = '''
 
 [[plugins]]
 repo = 'git@github.com:thinca/vim-quickrun.git'
+
 
