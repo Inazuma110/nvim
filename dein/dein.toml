@@ -27,7 +27,7 @@ repo = 'Shougo/unite.vim'
 [[plugins]]
 repo = 'scrooloose/nerdtree'
 
-# ファイルタイプ?
+# ファイルタイプ
 [[plugins]]
 repo = 'Shougo/context_filetype.vim'
 

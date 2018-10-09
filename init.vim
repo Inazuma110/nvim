@@ -31,12 +31,10 @@ if dein#load_state(s:dein_dir)
   call dein#end()
   call dein#save_state()
 endif
-
 " 不足プラグインの自動インストール
 if has('vim_starting') && dein#check_install()
   call dein#install()
 endif
-
 let g:HOME = expand('~')
 " path/to/nvim_dir
 let g:NVIM_HOME = g:HOME . '/.config/nvim'
