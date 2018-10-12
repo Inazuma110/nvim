@@ -1,0 +1,32 @@
+# pythonのインデント
+[[plugins]]
+repo = 'Vimjas/vim-python-pep8-indent'
+on_ft = 'py'
+
+[[plugins]]
+repo = 'kana/vim-smartchr'
+hook_add = '''
+  inoremap <expr>, smartchr#loop(', ', ',')
+'''
+on_i = 1
+
+
+# md
+[[plugins]]
+repo = 'rcmdnk/vim-markdown'
+on_ft = ['md', 'markdown']
+on_i = 1
+
+
+
+# カッコ補完
+[[plugins]]
+repo = 'cohama/lexima.vim'
+on_i = 1
+
+# [[plugins]]
+# repo = 'git@github.com:Floobits/floobits-neovim.git'
+
+[[plugins]]
+repo = 'git@github.com:othree/yajs.vim.git'
+on_ft = 'javascript'

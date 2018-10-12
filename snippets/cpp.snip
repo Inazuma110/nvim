@@ -1,0 +1,65 @@
+snippet	for loop
+abbr	for
+	for (int ${1:i} = 0; $1 < ${2:count}; $1++)
+	{
+		${3:/* code */}
+	}
+
+snippet	if
+abbr	if
+	if (${1})
+	{
+		${2:/* code */}
+	}
+
+snippet	else if
+abbr	else
+	else if (${1}){
+
+	}
+
+snippet	while
+abbr	while
+	while(${1}) {
+		${2:/* code */}
+	}
+
+
+snippet	do while
+abbr	do
+	do{
+		${1}
+	} while();
+
+snippet	return
+abbr	return
+	return ${1}
+
+snippet	cout
+abbr	cout
+	cout << ${1:/* message */} << endl;
+
+snippet	cin
+abbr	cin
+	cin >> ${1:/* variable */};
+
+snippet	vector declare
+	vector<${1:int}> ${2:v};
+
+abbr	vector
+snippet	2 dim vec declare
+abbr	twovec
+	vector<vector<${1:type}>> ${3:vv}(${2:elementNum},vector<$1>(${4}));
+
+snippet	push_back func
+abbr	push_back()
+	push_back(${1});
+
+snippet	map declare
+abbr	map
+	map<${1:key}, ${2:value}> mp;
+
+snippet	printf
+abbr	printf
+	printf("${1:%d}\n",${2:/*variable*/});
+

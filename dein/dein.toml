@@ -1,0 +1,99 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Inazuma110/air.vim'
+
+# 非同期実行
+[[plugins]]
+repo = 'w0rp/ale'
+
+# win resize
+[[plugins]]
+repo = 'simeji/winresizer'
+hook_add = '''
+  " window resize
+  let g:winresizer_vert_resize = 1
+  let g:winresizer_horiz_resize = 1
+'''
+# tomlのハイライト
+[[plugins]]
+repo = 'cespare/vim-toml'
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+
+# ファイルアイコンを入れる
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+
+# ファイルタイプ
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'
+
+[[plugins]]
+repo = 'Shougo/vimfiler.vim'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+# 差分行表示
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+hook_add = '''
+  let g:gitgutter_sign_added = '✚'
+  let g:gitgutter_sign_modified = '➜'
+  let g:gitgutter_sign_removed = '✘'
+'''
+
+# ファイルアイコンをつける
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+hook_add = 'let g:WebDevIconsUnicodeDecorateFolderNodes = 1'
+
+[[plugins]]
+repo = 'easymotion/vim-easymotion'
+
+[[plugins]]
+repo = 'vim-scripts/fcitx.vim'
+
+[[plugins]] # カラースキーマ
+repo =  'git@github.com:jacoborus/tender.vim.git'
+hook_add = '''
+  au ColorScheme * highlight LineNr ctermfg=10
+  " colorscheme 設定は source 後に行う必要があるので VimEnter で行う。
+  " 但し Colorscheme イベントの発生が抑制されないよう nented を付ける。
+  au VimEnter * nested colorscheme tender
+'''
+
+# カッコに色付け
+[[plugins]]
+repo = 'luochen1990/rainbow'
+hook_add = 'let g:rainbow_active = 1'
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+# コメントアウト
+[[plugins]]
+repo = 'tyru/caw.vim'
+
+[[plugins]]
+repo = 'junegunn/vim-easy-align'
+hook_add = '''
+  xmap ga <Plug>(EasyAlign)
+  nmap ga <Plug>(EasyAlign)
+'''
+
+[[plugins]]
+repo = 'git@github.com:Yggdroot/indentLine.git'
+hook_add = '''
+  let g:indentLine_char = '▏'
+  let g:indentLine_first_char = '▏'
+  " let g:indentLine_showFirstIndentLevel = -1
+'''
+
+[[plugins]]
+repo = 'git@github.com:thinca/vim-quickrun.git'
+
+
