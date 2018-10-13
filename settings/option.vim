@@ -1,7 +1,7 @@
 syntax on
 
 filetype plugin indent on
-set sh=bash
+set sh=zsh
 set t_Co=256
 set relativenumber
 set number
