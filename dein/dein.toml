@@ -96,4 +96,23 @@ hook_add = '''
 [[plugins]]
 repo = 'git@github.com:thinca/vim-quickrun.git'
 
+[[plugins]]
+repo = 'git@github.com:deris/vim-shot-f.git'
+
+[[plugins]]
+repo = 'git@github.com:kana/vim-operator-user.git'
+
+
+[[plugins]]
+repo = 'git@github.com:haya14busa/vim-operator-flashy.git'
+hook_add = '''
+  map y <Plug>(operator-flashy)
+  nmap Y <Plug>(operator-flashy)$
+'''
+
+[[plugins]]
+repo =  'elzr/vim-json'
+hook_add = '''
+  let g:vim_json_syntax_conceal = 0
+'''
 

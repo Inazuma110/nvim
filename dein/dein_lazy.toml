@@ -17,9 +17,12 @@ repo = 'rcmdnk/vim-markdown'
 on_ft = ['md', 'markdown']
 on_i = 1
 
+[[plugins]]
+repo = 'git@github.com:posva/vim-vue.git'
+on_ft = 'vue'
 
 
-# カッコ補完
+# () complete
 [[plugins]]
 repo = 'cohama/lexima.vim'
 on_i = 1

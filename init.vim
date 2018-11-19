@@ -42,3 +42,4 @@ let g:NVIM_HOME = g:HOME . '/.config/nvim'
 execute('source ' . g:NVIM_HOME . '/settings/path.vim')
 execute('source ' . g:NVIM_HOME . '/settings/keymap.vim')
 execute('source ' . g:NVIM_HOME . '/settings/option.vim')
+
