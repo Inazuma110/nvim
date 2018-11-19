@@ -20,3 +20,5 @@ set noswapfile
 autocmd BufWritePre * :%s/\s\+$//ge
 
 autocmd FileType neosnippet setlocal noexpandtab
+
+command! Reboot source ~/.config/nvim/init.vim
