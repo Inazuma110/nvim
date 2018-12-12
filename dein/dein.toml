@@ -1,10 +1,12 @@
+# package manager
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
+# background trance
 [[plugins]]
 repo = 'Inazuma110/air.vim'
 
-# 非同期実行
+# lint
 [[plugins]]
 repo = 'w0rp/ale'
 
@@ -16,28 +18,30 @@ hook_add = '''
   let g:winresizer_vert_resize = 1
   let g:winresizer_horiz_resize = 1
 '''
-# tomlのハイライト
+# toml highlight
 [[plugins]]
 repo = 'cespare/vim-toml'
+
 
 [[plugins]]
 repo = 'Shougo/unite.vim'
 
-# ファイルアイコンを入れる
+# project tree
 [[plugins]]
 repo = 'scrooloose/nerdtree'
 
-# ファイルタイプ
+# filetype
 [[plugins]]
 repo = 'Shougo/context_filetype.vim'
 
 [[plugins]]
 repo = 'Shougo/vimfiler.vim'
 
+# git
 [[plugins]]
 repo = 'tpope/vim-fugitive'
 
-# 差分行表示
+# git
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
 hook_add = '''
@@ -46,27 +50,28 @@ hook_add = '''
   let g:gitgutter_sign_removed = '✘'
 '''
 
-# ファイルアイコンをつける
+# file icons
 [[plugins]]
 repo = 'ryanoasis/vim-devicons'
 hook_add = 'let g:WebDevIconsUnicodeDecorateFolderNodes = 1'
 
+
 [[plugins]]
 repo = 'easymotion/vim-easymotion'
+
 
 [[plugins]]
 repo = 'vim-scripts/fcitx.vim'
 
-[[plugins]] # カラースキーマ
+# colorschema
+[[plugins]]
 repo =  'git@github.com:jacoborus/tender.vim.git'
 hook_add = '''
   au ColorScheme * highlight LineNr ctermfg=10
-  " colorscheme 設定は source 後に行う必要があるので VimEnter で行う。
-  " 但し Colorscheme イベントの発生が抑制されないよう nented を付ける。
   au VimEnter * nested colorscheme tender
 '''
 
-# カッコに色付け
+# () highlight
 [[plugins]]
 repo = 'luochen1990/rainbow'
 hook_add = 'let g:rainbow_active = 1'
@@ -74,7 +79,7 @@ hook_add = 'let g:rainbow_active = 1'
 [[plugins]]
 repo = 'tpope/vim-surround'
 
-# コメントアウト
+# commentout
 [[plugins]]
 repo = 'tyru/caw.vim'
 
@@ -85,6 +90,7 @@ hook_add = '''
   nmap ga <Plug>(EasyAlign)
 '''
 
+# indent highlight
 [[plugins]]
 repo = 'git@github.com:Yggdroot/indentLine.git'
 hook_add = '''
@@ -93,16 +99,20 @@ hook_add = '''
   " let g:indentLine_showFirstIndentLevel = -1
 '''
 
+# execute script
 [[plugins]]
 repo = 'git@github.com:thinca/vim-quickrun.git'
 
+# highlight command f
 [[plugins]]
 repo = 'git@github.com:deris/vim-shot-f.git'
+
 
 [[plugins]]
 repo = 'git@github.com:kana/vim-operator-user.git'
 
 
+# yank highlight
 [[plugins]]
 repo = 'git@github.com:haya14busa/vim-operator-flashy.git'
 hook_add = '''
@@ -110,9 +120,27 @@ hook_add = '''
   nmap Y <Plug>(operator-flashy)$
 '''
 
+# syntax json
 [[plugins]]
 repo =  'elzr/vim-json'
 hook_add = '''
   let g:vim_json_syntax_conceal = 0
+'''
+# [[plugins]]
+# repo = 'git@github.com:Shougo/defx.nvim.git'
+
+# open browser from vim
+[[plugins]]
+repo = 'git@github.com:tyru/open-browser.vim.git'
+
+[[plugins]]
+repo = 'git@github.com:thinca/vim-showtime.git'
+hook_add = '''
+  function! s:MyShowtimeStart() abort
+    ShowtimeStart
+    IndentLinesDisable
+  endfunction
+
+  command! InazumaShowtimeStart call s:MyShowtimeStart()
 '''
 

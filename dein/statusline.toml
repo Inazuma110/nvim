@@ -1,4 +1,3 @@
-# ステータスバーをいい感じに
 [[plugins]]
 #repo = 'vim-airline/vim-airline'
 repo = 'itchyny/lightline.vim'

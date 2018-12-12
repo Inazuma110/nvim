@@ -21,4 +21,6 @@ autocmd BufWritePre * :%s/\s\+$//ge
 
 autocmd FileType neosnippet setlocal noexpandtab
 
+autocmd FileType vue syntax sync fromstart
+
 command! Reboot source ~/.config/nvim/init.vim
