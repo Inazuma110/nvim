@@ -71,10 +71,19 @@ on_i = 1
 repo = 'git@github.com:wokalski/autocomplete-flow.git'
 on_ft = ['js', 'vue']
 
+
+# complete clang
 [[plugins]]
 repo = 'git@github.com:Shougo/deoplete-clangx.git'
 
-
 # [[plugins]]
-# repo = 'git@github.com:fszymanski/deoplete-emoji.git'
+# repo = 'git@github.com:tbodt/deoplete-tabnine.git'
 #
+
+[[plugins]]
+repo = 'git@github.com:fszymanski/deoplete-emoji.git'
+
+# fish script completion
+[[plugins]]
+repo = 'git@github.com:dag/vim-fish.git'
+

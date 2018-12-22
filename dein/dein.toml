@@ -126,6 +126,7 @@ repo =  'elzr/vim-json'
 hook_add = '''
   let g:vim_json_syntax_conceal = 0
 '''
+
 # [[plugins]]
 # repo = 'git@github.com:Shougo/defx.nvim.git'
 
@@ -133,6 +134,7 @@ hook_add = '''
 [[plugins]]
 repo = 'git@github.com:tyru/open-browser.vim.git'
 
+# presen
 [[plugins]]
 repo = 'git@github.com:thinca/vim-showtime.git'
 hook_add = '''
@@ -143,4 +145,8 @@ hook_add = '''
 
   command! InazumaShowtimeStart call s:MyShowtimeStart()
 '''
+
+# nyancat
+# [[plugins]]
+# repo = 'git@github.com:mattn/vim-nyancat.git'
 
