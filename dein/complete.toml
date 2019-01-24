@@ -64,6 +64,7 @@ on_i = 1
 repo = 'Shougo/neco-syntax'
 on_i = 1
 
+# clang complete
 [[plugins]]
 repo = 'tbodt/deoplete-tabnine'
 build = './install.sh'
@@ -101,18 +102,20 @@ repo = 'git@github.com:wokalski/autocomplete-flow.git'
 on_ft = ['js', 'vue']
 
 
-# complete clang
-[[plugins]]
-repo = 'git@github.com:Shougo/deoplete-clangx.git'
-on_ft = ['c', 'cpp', 'cmake']
-hook_source = '''
-  let g:deoplete#sources#clang#libclang_path = system("llvm-config --prefix")[:-2] . '/lib/libclang.dylib'
-  let g:deoplete#sources#clang#clang_header = system("llvm-config --prefix")[:-2] . '/lib/clang'
-  let g:deoplete#sources#clang#sort_algo = 'priority'
-  let g:deoplete#sources#clang#clang_complete_database="./build/"
-'''
-depends = ['deoplete.nvim']
 
+
+# complete clang
+# [[plugins]]
+# repo = 'git@github.com:Shougo/deoplete-clangx.git'
+# on_ft = ['c', 'cpp', 'cmake']
+# hook_source = '''
+#   let g:deoplete#sources#clang#libclang_path = system("llvm-config --prefix")[:-2] . '/lib/libclang.dylib'
+#   let g:deoplete#sources#clang#clang_header = system("llvm-config --prefix")[:-2] . '/lib/clang'
+#   let g:deoplete#sources#clang#sort_algo = 'priority'
+#   let g:deoplete#sources#clang#clang_complete_database="./build/"
+# '''
+# depends = ['deoplete.nvim']
+#
 
 # emoji
 # [[plugins]]
