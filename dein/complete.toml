@@ -1,6 +1,7 @@
 # default snippets
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
+depends = ['deoplete.nvim']
 
 # snippets
 [[plugins]]
@@ -30,7 +31,7 @@ hook_add = '''
 # complete
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
-on_event = 'InsertCharPre'
+# on_event = 'InsertCharPre'
 hook_add = '''
   let g:deoplete#enable_at_startup = 1
   let g:deoplete#auto_complete_delay = 0
@@ -47,9 +48,11 @@ hook_add = '''
 '''
 on_i = 1
 
+
 # clang include complete
 [[plugins]]
 repo = 'git@github.com:Shougo/neoinclude.vim.git'
+depends = ['deoplete.nvim']
 
 # vimscript complete
 [[plugins]]
@@ -61,6 +64,11 @@ on_i = 1
 repo = 'Shougo/neco-syntax'
 on_i = 1
 
+[[plugins]]
+repo = 'tbodt/deoplete-tabnine'
+build = './install.sh'
+
+ # complete English word
 [[plugins]]
 repo = 'ujihisa/neco-look'
 hook_add = '''
@@ -86,6 +94,7 @@ let g:neocomplete#text_mode_filetypes = {
 repo = 'zchee/deoplete-jedi'
 on_ft = ['python', 'py']
 on_i = 1
+depends = ['deoplete.nvim']
 
 [[plugins]]
 repo = 'git@github.com:wokalski/autocomplete-flow.git'
@@ -95,11 +104,17 @@ on_ft = ['js', 'vue']
 # complete clang
 [[plugins]]
 repo = 'git@github.com:Shougo/deoplete-clangx.git'
+on_ft = ['c', 'cpp', 'cmake']
+hook_source = '''
+  let g:deoplete#sources#clang#libclang_path = system("llvm-config --prefix")[:-2] . '/lib/libclang.dylib'
+  let g:deoplete#sources#clang#clang_header = system("llvm-config --prefix")[:-2] . '/lib/clang'
+  let g:deoplete#sources#clang#sort_algo = 'priority'
+  let g:deoplete#sources#clang#clang_complete_database="./build/"
+'''
+depends = ['deoplete.nvim']
 
-# [[plugins]]
-# repo = 'git@github.com:tbodt/deoplete-tabnine.git'
-#
 
+# emoji
 # [[plugins]]
 # repo = 'git@github.com:fszymanski/deoplete-emoji.git'
 
