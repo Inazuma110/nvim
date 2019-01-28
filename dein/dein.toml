@@ -23,8 +23,8 @@ hook_add = '''
 repo = 'cespare/vim-toml'
 
 
-[[plugins]]
-repo = 'Shougo/unite.vim'
+# [[plugins]]
+# repo = 'Shougo/unite.vim'
 
 # project tree
 [[plugins]]
@@ -111,7 +111,6 @@ repo = 'git@github.com:deris/vim-shot-f.git'
 [[plugins]]
 repo = 'git@github.com:kana/vim-operator-user.git'
 
-
 # yank highlight
 [[plugins]]
 repo = 'git@github.com:haya14busa/vim-operator-flashy.git'
@@ -120,7 +119,7 @@ hook_add = '''
   nmap Y <Plug>(operator-flashy)$
 '''
 
-# syntax json
+# syntax highlight json
 [[plugins]]
 repo =  'elzr/vim-json'
 hook_add = '''
@@ -146,11 +145,6 @@ hook_add = '''
   command! InazumaShowtimeStart call s:MyShowtimeStart()
 '''
 
-# c, cpp connect header and sources.
-[[plugins]]
-repo = 'vim-scripts/a.vim'
-on_ft = ['c', 'cpp']
-
 [[plugins]]
 repo = 'git@github.com:majutsushi/tagbar.git'
 
@@ -160,6 +154,7 @@ repo = 'autozimu/LanguageClient-neovim'
 build = ['./install.sh']
 rev = 'next'
 hook_add = '''
+    " set completefunc=LanguageClient#complete
     let s:node = empty($XDG_CONFIG_HOME) ? expand('$HOME/.config') : $XDG_CONFIG_HOME
     let g:LanguageClient_serverCommands = {
         \ 'c': ['clangd', '-compile-commands-dir=' . getcwd() . '/build'],

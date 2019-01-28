@@ -47,3 +47,9 @@ on_i = 1
 [[plugins]]
 repo = 'git@github.com:othree/yajs.vim.git'
 on_ft = 'javascript'
+
+# c, cpp connect header and sources.
+[[plugins]]
+repo = 'vim-scripts/a.vim'
+on_ft = ['c', 'cpp']
+
