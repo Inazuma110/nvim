@@ -1,23 +1,3 @@
-snippet	for loop
-abbr	for
-	for (int ${1:i} = 0; $1 < ${2:count}; $1++)
-	{
-		${3:/* code */}
-	}
-
-snippet	if
-abbr	if
-	if (${1})
-	{
-		${2:/* code */}
-	}
-
-snippet	else if
-abbr	else
-	else if (${1}){
-
-	}
-
 snippet	while
 abbr	while
 	while(${1}) {
@@ -33,7 +13,7 @@ abbr	do
 
 snippet	return
 abbr	return
-	return ${1}
+	return ${1};
 
 snippet	cout
 abbr	cout
@@ -46,7 +26,6 @@ abbr	cin
 snippet	vector declare
 	vector<${1:int}> ${2:v};
 
-abbr	vector
 snippet	2 dim vec declare
 abbr	twovec
 	vector<vector<${1:type}>> ${3:vv}(${2:elementNum},vector<$1>(${4}));
@@ -57,9 +36,19 @@ abbr	push_back()
 
 snippet	map declare
 abbr	map
-	map<${1:key}, ${2:value}> mp;
+	map<${1:key}, ${2:value}> ${3:mp};${4}
 
 snippet	printf
 abbr	printf
 	printf("${1:%d}\n",${2:/*variable*/});
 
+snippet	hudou
+abbr	hudou
+	cout<<setprecision(15);
+
+snippet	cmp
+abbr	cmp
+	bool cmp(const Info &a, const Info &b)
+	{
+	    return a.${1:val} < b.$1;${2}
+	}
