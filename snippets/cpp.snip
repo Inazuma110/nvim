@@ -50,5 +50,96 @@ snippet	cmp
 abbr	cmp
 	bool cmp(const Info &a, const Info &b)
 	{
-	    return a.${1:val} < b.$1;${2}
+		return a.${1:val} < b.$1;${2}
+	}
+
+snippet	comb
+abbr	comb
+	long long comb(int n, int r) {
+		if(r > n - r) r = n - r; // because C(n, r) == C(n, n - r)
+		long long ans = 1;
+
+		for(int i = 1; i <= r; i++) {
+			ans *= n - r + i;
+			ans /= i;
+		}
+
+		return ans;
+	}
+
+snippet	digit_sum
+abbr	digit_sum
+	ll digitSum(int n)
+	{
+	  if(n < 10) return n;
+	  else return n % 10 + digitSum(n / 10);
+	}
+
+snippet	dijkstra
+abbr	dijkstra
+	struct Node {
+	  vector<int> to;
+	  vector<int> cost;
+	  bool done = false;
+	  int minCost = INT_MAX;
+	};
+
+	int dijkstra(vector<Node> v, int start, int goal){
+	  int nodeNum = int(v.size());
+	  v[start].minCost = 0;
+	  int now = start;
+	  while(true) {
+	    // printNode(v);
+	    v[now].done = true;
+	    if(now == goal) return v[now].minCost;
+	    int edgeNum = int(v[now].to.size());
+	    for (int i = 0; i < edgeNum; i++) {
+	      int nextNodeIndex = v[now].to[i];
+	      v[nextNodeIndex].minCost =
+	        min(v[nextNodeIndex].minCost, v[now].minCost + v[now].cost[i]);
+	    }
+
+	    int minNodeIndex = -1;
+	    int minNodeCost = INT_MAX;
+	    for (int i = 0; i < nodeNum; i++) {
+	      if(i == now) continue;
+	      if(minNodeCost > v[i].minCost && !v[i].done){
+	        minNodeIndex = i;
+	        minNodeCost = v[i].minCost;
+	      }
+	    }
+	    now = minNodeIndex;
+	  }
+	}
+
+snippet	factoring
+abbr	factoring
+	vector<pair<ll, int>> factoring(ll a){
+	  vector<pair<ll, int>> v;
+	  for (int i = 2; i <= a; i++) {
+	    if(a % i == 0){
+	      int count = 0;
+	      while(a % i == 0){
+	        count++;
+	        a /= i;
+	      }
+	      v.push_back({i, count});
+	    }
+	  }
+	  return v;
+	}
+
+snippet	gcd_lcm
+abbr	gcd_lcm
+	ll gcd(ll a, ll b)
+	{
+	  if(b == 0) return a;
+	  else return gcd(b, a % b);
+	  // return (b == 0) ? a : gcd(b, a % b);
+	}
+
+	ll lcm(ll a, ll b)
+	{
+	  ll g = gcd(a, b);
+	  return a / g * b;
 	}
