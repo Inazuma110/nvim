@@ -7,8 +7,8 @@ repo = 'Shougo/dein.vim'
 repo = 'Inazuma110/air.vim'
 
 # lint
-[[plugins]]
-repo = 'w0rp/ale'
+# [[plugins]]
+# repo = 'w0rp/ale'
 
 # win resize
 [[plugins]]
@@ -170,6 +170,9 @@ hook_add = '''
     nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
     nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
     command! LSPFormat :call LanguageClient#textDocument_formatting()
+    let g:LanguageClient_serverCommands = {
+      \ 'python': ['pyls'],
+      \ }
 '''
 
 # nyancat
