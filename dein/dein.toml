@@ -159,6 +159,7 @@ hook_add = '''
     let g:LanguageClient_serverCommands = {
         \ 'c': ['clangd', '-compile-commands-dir=' . getcwd() . '/build'],
         \ 'cpp': ['clangd', '-compile-commands-dir=' . getcwd() . '/build'],
+        \ 'python': ['pyls'],
     \ }
     " not stop completion $ & /
     set hidden
@@ -170,9 +171,6 @@ hook_add = '''
     nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
     nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
     command! LSPFormat :call LanguageClient#textDocument_formatting()
-    let g:LanguageClient_serverCommands = {
-      \ 'python': ['pyls'],
-      \ }
 '''
 
 # nyancat
