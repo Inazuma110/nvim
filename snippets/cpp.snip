@@ -77,40 +77,45 @@ abbr	digit_sum
 
 snippet	dijkstra
 abbr	dijkstra
-	struct Node {
-	  vector<int> to;
-	  vector<int> cost;
-	  bool done = false;
-	  int minCost = INT_MAX;
-	};
+	struct Graph {
+	  vector<vector<int>> cost;
+	  vector<bool> visited;
+	  vector<int> min_cost;
 
-	int dijkstra(vector<Node> v, int start, int goal){
-	  int nodeNum = int(v.size());
-	  v[start].minCost = 0;
-	  int now = start;
-	  while(true) {
-	    // printNode(v);
-	    v[now].done = true;
-	    if(now == goal) return v[now].minCost;
-	    int edgeNum = int(v[now].to.size());
-	    for (int i = 0; i < edgeNum; i++) {
-	      int nextNodeIndex = v[now].to[i];
-	      v[nextNodeIndex].minCost =
-	        min(v[nextNodeIndex].minCost, v[now].minCost + v[now].cost[i]);
-	    }
 
-	    int minNodeIndex = -1;
-	    int minNodeCost = INT_MAX;
-	    for (int i = 0; i < nodeNum; i++) {
-	      if(i == now) continue;
-	      if(minNodeCost > v[i].minCost && !v[i].done){
-	        minNodeIndex = i;
-	        minNodeCost = v[i].minCost;
+	  int dijkstra(int start, int goal){
+	    min_cost[start] = 0;
+	    int now = start;
+	    while(true) {
+	      if(now == goal) {
+	        int result = min_cost[now];
+	        visited = vector<bool> (int(cost.size()), false);
+	        min_cost = vector<int> (int(cost.size()), INT_MAX);
+	        return result;
 	      }
+
+	      visited[now] = true;
+	      for (int i = 0; i < int(cost.size()); i++) {
+	        if(cost[now][i] != -1){
+	          min_cost[i] = min(min_cost[i], min_cost[now]+cost[now][i]);
+	        }
+	      }
+
+	      int min_node_index = -1;
+	      int min_node_cost = INT_MAX;
+	      for (int i = 0; i < int(cost.size()); i++) {
+	        if((min_node_cost > min_cost[i]) && !visited[i]){
+	          min_node_index = i;
+	          min_node_cost = min_cost[i];
+	        }
+	      }
+	      now = min_node_index;
 	    }
-	    now = minNodeIndex;
+
+	    // error
+	    return -1;
 	  }
-	}
+	};
 
 snippet	factoring
 abbr	factoring
@@ -222,3 +227,45 @@ abbr	logn
 	long double logn(int base, int tv) {
 	  return log(tv) / log(base);
 	}
+
+snippet	graph
+abbr	graph
+	struct Graph {
+	  vector<vector<int>> cost;
+	  vector<bool> visited;
+	  vector<int> min_cost;
+
+
+	  int dijkstra(int start, int goal){
+	    min_cost[start] = 0;
+	    int now = start;
+	    while(true) {
+	      if(now == goal) {
+	        int result = min_cost[now];
+	        visited = vector<bool> (int(cost.size()), false);
+	        min_cost = vector<int> (int(cost.size()), INT_MAX);
+	        return result;
+	      }
+
+	      visited[now] = true;
+	      for (int i = 0; i < int(cost.size()); i++) {
+	        if(cost[now][i] != -1){
+	          min_cost[i] = min(min_cost[i], min_cost[now]+cost[now][i]);
+	        }
+	      }
+
+	      int min_node_index = -1;
+	      int min_node_cost = INT_MAX;
+	      for (int i = 0; i < int(cost.size()); i++) {
+	        if((min_node_cost > min_cost[i]) && !visited[i]){
+	          min_node_index = i;
+	          min_node_cost = min_cost[i];
+	        }
+	      }
+	      now = min_node_index;
+	    }
+
+	    // error
+	    return -1;
+	  }
+	};
