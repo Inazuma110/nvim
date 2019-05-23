@@ -234,7 +234,13 @@ abbr	graph
 	  vector<vector<int>> cost;
 	  vector<bool> visited;
 	  vector<int> min_cost;
+	  int node_num, edge_num;
 
+	  Graph(int nn, int en) : node_num(nn), edge_num(en){
+	    visited = vector<bool> (node_num, false);
+	    min_cost = vector<int> (node_num, INT_MAX);
+	    cost = vector<vector<int>> (node_num, vector<int> (node_num, -1));
+	  }
 
 	  int dijkstra(int start, int goal){
 	    min_cost[start] = 0;
@@ -242,8 +248,7 @@ abbr	graph
 	    while(true) {
 	      if(now == goal) {
 	        int result = min_cost[now];
-	        visited = vector<bool> (int(cost.size()), false);
-	        min_cost = vector<int> (int(cost.size()), INT_MAX);
+	        init();
 	        return result;
 	      }
 
@@ -267,5 +272,10 @@ abbr	graph
 
 	    // error
 	    return -1;
+	  }
+
+	  void init(){
+	    visited = vector<bool> (node_num, false);
+	    min_cost = vector<int> (node_num, INT_MAX);
 	  }
 	};
