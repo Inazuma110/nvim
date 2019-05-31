@@ -23,9 +23,6 @@ hook_add = '''
 repo = 'cespare/vim-toml'
 
 
-# [[plugins]]
-# repo = 'Shougo/unite.vim'
-
 # project tree
 [[plugins]]
 repo = 'scrooloose/nerdtree'
@@ -177,4 +174,7 @@ hook_add = '''
 # nyancat
 # [[plugins]]
 # repo = 'git@github.com:mattn/vim-nyancat.git'
+
+[[plugins]]
+repo = 'https://github.com/Shougo/denite.nvim'
 
