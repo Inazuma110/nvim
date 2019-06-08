@@ -20,8 +20,10 @@ let s:toml_file = fnamemodify(expand('<sfile>'), ':h').'/dein/dein.toml'
 let s:toml_statusline = fnamemodify(expand('<sfile>'), ':h').'/dein/statusline.toml'
 let s:toml_complete = fnamemodify(expand('<sfile>'), ':h').'/dein/complete.toml'
 let s:toml_lazyfile = fnamemodify(expand('<sfile>'), ':h').'/dein/dein_lazy.toml'
+let s:toml_denite_settings = fnamemodify(expand('<sfile>'), ':h').'/dein/denite.toml'
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
+  call dein#load_toml(s:toml_denite_settings)
   call dein#load_toml(s:toml_file)
   call dein#load_toml(s:toml_statusline)
   call dein#load_toml(s:toml_complete)
