@@ -139,3 +139,7 @@ hook_add = '''
         \  context, 'open', context['targets'])})
   <
 '''
+
+# [[plugins]]
+# repo = 'https://github.com/delphinus/vim-denite-node-modules'
+
