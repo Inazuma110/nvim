@@ -117,4 +117,22 @@ on_ft = ['js', 'vue']
 [[plugins]]
 repo = 'git@github.com:dag/vim-fish.git'
 
+[[plugins]]
+repo = 'https://github.com/Shougo/echodoc.vim.git'
+hook_add = '''
+  " set cmdheight=2
+  " let g:echodoc#enable_at_startup = 1
+  " let g:echodoc#type = 'signature'
+'''
+
+[[plugins]]
+repo = 'ncm2/float-preview.nvim.git'
+hook_add = '''
+  let g:float_preview#docked = 0
+  set completeopt-=preview
+'''
+
+[[plugins]]
+repo = 'https://github.com/tbodt/deoplete-tabnine.git'
+build = 'bash ./install.sh'
 

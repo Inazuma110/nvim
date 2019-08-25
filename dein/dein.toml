@@ -178,3 +178,27 @@ hook_add = '''
 # [[plugins]]
 # repo = 'git@github.com:mattn/vim-nyancat.git'
 
+# [[plugins]]
+# repo = 'https://github.com/kusabashira/vim-nicomment.git'
+# hook_add = '''
+#   " It generates claps
+#   let g:nicomment_comment_generator = {}
+#   function! g:nicomment_comment_generator.generate()
+#     if !has_key(self, 'rand')
+#       " It requires vital.vim
+#       let V = vital#of('vital')
+#       let Xor128 = V.import('Random.Xor128')
+#       let self.rand = Xor128.new_generator()
+#     endif
+#
+#     if abs(self.rand.next() % 10) == 0
+#       return repeat('8', abs(self.rand.next() % 20) + 4)
+#     else
+#       return v:null
+#     endif
+#   endfunction
+# '''
+
+[[plugins]]
+repo = 'https://github.com/skanehira/badapple.vim.git'
+
