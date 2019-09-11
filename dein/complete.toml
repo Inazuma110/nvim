@@ -7,6 +7,9 @@ depends = ['deoplete.nvim']
 [[plugins]]
 repo = 'Shougo/neosnippet.vim'
 hook_add = '''
+  " snippets
+  let g:neosnippet#snippets_directory='~/.config/nvim/snippets'
+
   " Plugin key-mappings.
   " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
   imap <C-k>     <Plug>(neosnippet_expand_or_jump)
