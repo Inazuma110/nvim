@@ -14,7 +14,4 @@ nnoremap sK <C-w>K
 nnoremap sL <C-w>L
 
 
-"nnoremap tn :<C-u>tabnew<CR>
-nnoremap ya :%y
-
 tnoremap <silent> <C-[> <C-\><C-n>
