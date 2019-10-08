@@ -1,7 +1,3 @@
-# package manager
-[[plugins]]
-repo = 'Shougo/dein.vim'
-
 # background trance
 [[plugins]]
 repo = 'Inazuma110/air.vim'
@@ -201,4 +197,5 @@ hook_add = '''
 
 [[plugins]]
 repo = 'https://github.com/skanehira/badapple.vim.git'
+
 

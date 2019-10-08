@@ -13,13 +13,13 @@ on_i = 1
 
 
 # markdown
-[[plugins]]
-repo = 'rcmdnk/vim-markdown'
-on_ft = ['md', 'markdown']
-on_i = 1
-hook_add = '''
-  set foldlevel=100
-'''
+# [[plugins]]
+# repo = 'rcmdnk/vim-markdown'
+# on_ft = ['md', 'markdown']
+# on_i = 1
+# hook_add = '''
+#   set foldlevel=100
+# '''
 
 # preview markdown
 [[plugins]]
