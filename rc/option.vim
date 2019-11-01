@@ -1,9 +1,9 @@
 syntax on
 
 filetype plugin indent on
-" set sh=zsh
+set sh=zsh
+" set sh=fish
 set t_Co=256
-set sh=fish
 set relativenumber
 set number
 set smartindent

@@ -37,9 +37,9 @@ on_ft = 'vue'
 
 
 # () complete
-[[plugins]]
-repo = 'cohama/lexima.vim'
-on_i = 1
+# [[plugins]]
+# repo = 'cohama/lexima.vim'
+# on_i = 1
 
 # [[plugins]]
 # repo = 'git@github.com:Floobits/floobits-neovim.git'
@@ -53,3 +53,6 @@ on_ft = 'javascript'
 repo = 'vim-scripts/a.vim'
 on_ft = ['c', 'cpp']
 
+[[plugins]]
+repo = 'git@github.com:aklt/plantuml-syntax.git'
+on_ft = ['uml']

@@ -1,11 +1,13 @@
 # default snippets
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
+on_i = 1
 depends = ['deoplete.nvim']
 
 # snippets
 [[plugins]]
 repo = 'Shougo/neosnippet.vim'
+on_i = 1
 hook_add = '''
   " snippets
   let g:neosnippet#snippets_directory='~/.config/nvim/snippets'
@@ -58,6 +60,7 @@ on_i = 1
 [[plugins]]
 repo = 'git@github.com:Shougo/neoinclude.vim.git'
 depends = ['deoplete.nvim']
+on_i = 1
 
 # vimscript complete
 [[plugins]]

@@ -61,11 +61,8 @@ repo = 'vim-scripts/fcitx.vim'
 
 # colorschema
 [[plugins]]
-repo =  'git@github.com:jacoborus/tender.vim.git'
-hook_add = '''
-  au ColorScheme * highlight LineNr ctermfg=10
-  au VimEnter * nested colorscheme tender
-'''
+repo = 'git@github.com:w0ng/vim-hybrid.git'
+
 
 # () highlight
 [[plugins]]
@@ -157,6 +154,7 @@ hook_add = '''
         "\ 'cpp': ['clangd', '-compile-commands-dir=' . getcwd() . '/build'],
         \ 'cpp': ['clangd'],
         \ 'python': ['pyls'],
+        "\ 'java': ['/usr/local/bin/jdtls', '-data', getcwd()]
     \ }
     " not stop completion $ & /
     set hidden
@@ -197,5 +195,3 @@ hook_add = '''
 
 [[plugins]]
 repo = 'https://github.com/skanehira/badapple.vim.git'
-
-
