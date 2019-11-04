@@ -61,10 +61,10 @@ repo = 'vim-scripts/fcitx.vim'
 
 # colorschema
 [[plugins]]
-repo = 'git@github.com:w0ng/vim-hybrid.git'
+repo = 'https://github.com/jacoborus/tender.vim'
 hook_add = '''
   au ColorScheme * highlight LineNr ctermfg=10
-  au VimEnter * nested colorscheme hybrid
+  au VimEnter * nested colorscheme tender
 '''
 
 # () highlight
