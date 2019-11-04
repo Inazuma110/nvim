@@ -62,7 +62,10 @@ repo = 'vim-scripts/fcitx.vim'
 # colorschema
 [[plugins]]
 repo = 'git@github.com:w0ng/vim-hybrid.git'
-
+hook_add = '''
+  au ColorScheme * highlight LineNr ctermfg=10
+  au VimEnter * nested colorscheme hybrid
+'''
 
 # () highlight
 [[plugins]]
@@ -193,5 +196,11 @@ hook_add = '''
 #   endfunction
 # '''
 
+
 [[plugins]]
-repo = 'https://github.com/skanehira/badapple.vim.git'
+repo = 'https://github.com/willelz/badapple.nvim.git'
+
+
+[[plugins]]
+repo = 'https://github.com/glacambre/firenvim.git'
+
