@@ -153,4 +153,3 @@ hook_add = '''
 
 # [[plugins]]
 # repo = 'https://github.com/delphinus/vim-denite-node-modules'
-
