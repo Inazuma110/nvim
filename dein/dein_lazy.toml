@@ -28,6 +28,7 @@ hook_add = '''
   augroup PrevimSettings
     autocmd!
     autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+    " autocmd BufNewFile,BufRead *.{uml} set filetype=uml
   augroup END
 '''
 
@@ -41,6 +42,7 @@ on_ft = 'vue'
 # repo = 'cohama/lexima.vim'
 # on_i = 1
 
+# group programming
 # [[plugins]]
 # repo = 'git@github.com:Floobits/floobits-neovim.git'
 
@@ -56,3 +58,35 @@ on_ft = ['c', 'cpp']
 [[plugins]]
 repo = 'git@github.com:aklt/plantuml-syntax.git'
 on_ft = ['uml']
+
+# toml highlight
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = 'toml'
+
+
+# presen
+[[plugins]]
+repo = 'git@github.com:thinca/vim-showtime.git'
+hook_add = '''
+  function! s:MyShowtimeStart() abort
+    ShowtimeStart
+    IndentLinesDisable
+  endfunction
+
+  command! InazumaShowtimeStart call s:MyShowtimeStart()
+'''
+on_ft = 'md'
+
+[[plugins]]
+repo = 'easymotion/vim-easymotion'
+on_i = 1
+
+# syntax highlight json
+[[plugins]]
+repo =  'elzr/vim-json'
+hook_add = '''
+  let g:vim_json_syntax_conceal = 0
+'''
+on_ft = 'json'
+

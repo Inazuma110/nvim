@@ -14,10 +14,6 @@ hook_add = '''
   let g:winresizer_vert_resize = 1
   let g:winresizer_horiz_resize = 1
 '''
-# toml highlight
-[[plugins]]
-repo = 'cespare/vim-toml'
-
 
 # project tree
 [[plugins]]
@@ -27,10 +23,7 @@ repo = 'scrooloose/nerdtree'
 [[plugins]]
 repo = 'Shougo/context_filetype.vim'
 
-[[plugins]]
-repo = 'Shougo/vimfiler.vim'
-
-# git
+# git command
 [[plugins]]
 repo = 'tpope/vim-fugitive'
 
@@ -52,8 +45,6 @@ hook_add = '''
 '''
 
 
-[[plugins]]
-repo = 'easymotion/vim-easymotion'
 
 
 [[plugins]]
@@ -79,6 +70,7 @@ repo = 'tpope/vim-surround'
 [[plugins]]
 repo = 'tyru/caw.vim'
 
+# adjust align
 [[plugins]]
 repo = 'junegunn/vim-easy-align'
 hook_add = '''
@@ -104,6 +96,7 @@ repo = 'git@github.com:thinca/vim-quickrun.git'
 repo = 'git@github.com:deris/vim-shot-f.git'
 
 
+# some plugins depend this
 [[plugins]]
 repo = 'git@github.com:kana/vim-operator-user.git'
 
@@ -115,34 +108,12 @@ hook_add = '''
   nmap Y <Plug>(operator-flashy)$
 '''
 
-# syntax highlight json
-[[plugins]]
-repo =  'elzr/vim-json'
-hook_add = '''
-  let g:vim_json_syntax_conceal = 0
-'''
-
 # [[plugins]]
 # repo = 'git@github.com:Shougo/defx.nvim.git'
 
 # open browser from vim
 [[plugins]]
 repo = 'git@github.com:tyru/open-browser.vim.git'
-
-# presen
-[[plugins]]
-repo = 'git@github.com:thinca/vim-showtime.git'
-hook_add = '''
-  function! s:MyShowtimeStart() abort
-    ShowtimeStart
-    IndentLinesDisable
-  endfunction
-
-  command! InazumaShowtimeStart call s:MyShowtimeStart()
-'''
-
-[[plugins]]
-repo = 'git@github.com:majutsushi/tagbar.git'
 
 # lsp
 [[plugins]]
@@ -171,9 +142,30 @@ hook_add = '''
     command! LSPFormat :call LanguageClient#textDocument_formatting()
 '''
 
-# nyancat
 # [[plugins]]
-# repo = 'git@github.com:mattn/vim-nyancat.git'
+# repo = 'prabirshrestha/async.vim'
+#
+# [[plugins]]
+# repo = 'https://github.com/prabirshrestha/vim-lsp'
+# hook_add = '''
+#   if executable('pyls')
+#       " pip install python-language-server
+#       au User lsp_setup call lsp#register_server({
+#          \ 'name': 'pyls',
+#          \ 'cmd': {server_info->['pyls']},
+#          \ 'whitelist': ['python'],
+#          \ })
+#   endif
+#   if executable('clangd')
+#       au User lsp_setup call lsp#register_server({
+#          \ 'name': 'clangd',
+#          \ 'cmd': {server_info->['clangd']},
+#          \ 'whitelist': ['cpp'],
+#          \ })
+#   endif
+# '''
+
+
 
 # [[plugins]]
 # repo = 'https://github.com/kusabashira/vim-nicomment.git'
@@ -236,6 +228,7 @@ hook_add = '''
   endfunction
   autocmd UIEnter * call OnUIEnter(deepcopy(v:event))
   au BufEnter github.com_*.txt set filetype=markdown
+  au BufEnter localhost_notebooks*.txt set filetype=python
 
   let g:dont_write = v:false
   function! My_Write(timer) abort
@@ -251,6 +244,17 @@ hook_add = '''
     call timer_start(10000, 'My_Write')
   endfunction
 
-  au TextChanged * ++nested call Delay_My_Write()
-  au TextChangedI * ++nested call Delay_My_Write()
+  " au TextChanged * ++nested call Delay_My_Write()
+  " au TextChangedI * ++nested call Delay_My_Write()
 '''
+
+
+# [[plugins]]
+# repo = 'osyo-manga/vim-over'
+# hook_add = '''
+#   " カーソル下の単語をハイライト付きで置換
+#   nnoremap sub :OverCommandLine<CR>%s/<C-r><C-w>//g<Left><Left>
+#
+#   " コピーした文字列をハイライト付きで置換
+#   nnoremap subp y:OverCommandLine<CR>%s!<C-r>=substitute(@0, '!', '\\!', 'g')<CR>!!gI<Left><Left><Left>
+# '''
