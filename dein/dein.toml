@@ -214,6 +214,10 @@ hook_add = '''
               \ 'selector': '',
               \ 'priority': 1,
           \ },
+          \ 'atcoder\.jp': {
+              \ 'selector': '',
+              \ 'priority': 1,
+          \ },
       \ }
   \ }
   function! OnUIEnter(event)
