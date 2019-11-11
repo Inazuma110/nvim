@@ -24,4 +24,9 @@ autocmd FileType neosnippet setlocal noexpandtab
 
 autocmd FileType vue syntax sync fromstart
 
+augroup setAutoCompile
+    autocmd!
+    autocmd BufWritePost *.tex :make
+augroup END
+
 command! Reboot source ~/.config/nvim/init.vim
