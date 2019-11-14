@@ -19,14 +19,8 @@ set shortmess-=S
 
 " 行末の空白削除
 autocmd BufWritePre * :%s/\s\+$//ge
-
 autocmd FileType neosnippet setlocal noexpandtab
-
 autocmd FileType vue syntax sync fromstart
-
-augroup setAutoCompile
-    autocmd!
-    autocmd BufWritePost *.tex :make
-augroup END
+autocmd BufWritePost *.tex :make
 
 command! Reboot source ~/.config/nvim/init.vim

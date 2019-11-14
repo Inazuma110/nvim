@@ -140,7 +140,16 @@ hook_add = '''
     nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
     nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
     command! LSPFormat :call LanguageClient#textDocument_formatting()
-'''
+    let g:LanguageClient_diagnosticsDisplay = {
+     \   1:{
+     \         "name": "Error",
+     \         "texthl": "ALEError",
+     \         "signText": "💩",
+     \         "signTexthl": "ALEErrorSign",
+     \         "virtualTexthl": "Error",
+     \     },
+    \ }
+      '''
 
 # [[plugins]]
 # repo = 'prabirshrestha/async.vim'

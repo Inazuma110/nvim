@@ -18,4 +18,4 @@ nnoremap <Leader>k gT
 
 tnoremap <silent> <C-[> <C-\><C-n>
 
-let g:mapleader = ' '
+" let g:mapleader = ' '
