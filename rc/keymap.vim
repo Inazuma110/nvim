@@ -12,5 +12,10 @@ nnoremap sJ <C-w>J
 nnoremap sK <C-w>K
 nnoremap sL <C-w>L
 
+nnoremap <Leader>j gt
+nnoremap <Leader>k gT
+
 
 tnoremap <silent> <C-[> <C-\><C-n>
+
+let g:mapleader = ' '

@@ -218,6 +218,10 @@ hook_add = '''
               \ 'selector': '',
               \ 'priority': 1,
           \ },
+          \ 'localhost:': {
+              \ 'selector': '',
+              \ 'priority': 1,
+          \ },
       \ }
   \ }
   function! OnUIEnter(event)
@@ -231,8 +235,10 @@ hook_add = '''
       endif
   endfunction
   autocmd UIEnter * call OnUIEnter(deepcopy(v:event))
+
   au BufEnter github.com_*.txt set filetype=markdown
-  au BufEnter localhost_notebooks*.txt set filetype=python
+  au BufEnter *notebooks*.txt set filetype=python
+  au BufEnter factory.quantx.io*.txt set filetype=python
 
   let g:dont_write = v:false
   function! My_Write(timer) abort
