@@ -277,3 +277,24 @@ hook_add = '''
 #   " コピーした文字列をハイライト付きで置換
 #   nnoremap subp y:OverCommandLine<CR>%s!<C-r>=substitute(@0, '!', '\\!', 'g')<CR>!!gI<Left><Left><Left>
 # '''
+[[plugins]]
+repo = 'https://github.com/itchyny/calendar.vim'
+hook_add = '''
+  let g:calendar_google_calendar = 1
+'''
+
+[[plugins]]
+repo = 'https://github.com/itchyny/vim-cursorword'
+
+[[plugins]]
+repo = 'https://github.com/rbtnn/game_engine.vim'
+
+[[plugins]]
+repo = 'https://github.com/rbtnn/mario.vim'
+
+[[plugins]]
+repo = 'https://github.com/rbtnn/puyo.vim'
+
+[[plugins]]
+repo = 'https://github.com/johngrib/vim-game-code-break'
+
