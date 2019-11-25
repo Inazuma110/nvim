@@ -208,30 +208,29 @@ hook_post_update = '''
   call firenvim#install(0)
 '''
 hook_add = '''
-  set guifont=Hack\ Nerd\ Font\ Regular
   let g:firenvim_config = {
-      \ 'localSettings': {
-          \ '.*': {
-              \ 'selector': 'textarea',
-              \ 'priority': 0,
-          \ },
-          \ 'tweetdeck\.twitter\.com': {
-              \ 'selector': '',
-              \ 'priority': 1,
-          \ },
-          \ 'google\.com': {
-              \ 'selector': '',
-              \ 'priority': 1,
-          \ },
-          \ 'atcoder\.jp': {
-              \ 'selector': '',
-              \ 'priority': 1,
-          \ },
-          \ 'localhost:': {
-              \ 'selector': '',
-              \ 'priority': 1,
-          \ },
-      \ }
+     \ 'localSettings': {
+         \ '.*': {
+             \ 'selector': 'textarea',
+             \ 'priority': 0,
+         \ },
+         \ 'tweetdeck\.twitter\.com': {
+             \ 'selector': '',
+             \ 'priority': 1,
+         \ },
+         \ 'google\.com': {
+             \ 'selector': '',
+             \ 'priority': 1,
+         \ },
+         \ 'atcoder\.jp': {
+             \ 'selector': '',
+             \ 'priority': 1,
+         \ },
+         \ 'localhost:': {
+             \ 'selector': '',
+             \ 'priority': 1,
+         \ },
+     \ }
   \ }
   function! OnUIEnter(event)
       let l:ui = nvim_get_chan_info(a:event.chan)
@@ -277,24 +276,26 @@ hook_add = '''
 #   " コピーした文字列をハイライト付きで置換
 #   nnoremap subp y:OverCommandLine<CR>%s!<C-r>=substitute(@0, '!', '\\!', 'g')<CR>!!gI<Left><Left><Left>
 # '''
-[[plugins]]
-repo = 'https://github.com/itchyny/calendar.vim'
-hook_add = '''
-  let g:calendar_google_calendar = 1
-'''
+# [[plugins]]
+# repo = 'https://github.com/itchyny/calendar.vim'
+# hook_add = '''
+#   let g:calendar_google_calendar = 1
+# '''
+
+# [[plugins]]
+# repo = 'https://github.com/itchyny/vim-cursorword'
+
+# [[plugins]]
+# repo = 'https://github.com/rbtnn/game_engine.vim'
+#
+# [[plugins]]
+# repo = 'https://github.com/rbtnn/mario.vim'
+#
+# [[plugins]]
+# repo = 'https://github.com/rbtnn/puyo.vim'
+
+# [[plugins]]
+# repo = 'https://github.com/johngrib/vim-game-code-break'
 
 [[plugins]]
-repo = 'https://github.com/itchyny/vim-cursorword'
-
-[[plugins]]
-repo = 'https://github.com/rbtnn/game_engine.vim'
-
-[[plugins]]
-repo = 'https://github.com/rbtnn/mario.vim'
-
-[[plugins]]
-repo = 'https://github.com/rbtnn/puyo.vim'
-
-[[plugins]]
-repo = 'https://github.com/johngrib/vim-game-code-break'
-
+repo = '~/.cache/dein/repos/github.com/Inazuma110/ushitapunikiakun.vim'

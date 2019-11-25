@@ -16,6 +16,8 @@ set autoindent
 set encoding=UTF-8
 set noswapfile
 set shortmess-=S
+set colorcolumn=80
+" set helplang=ja,en
 
 " 行末の空白削除
 autocmd BufWritePre * :%s/\s\+$//ge

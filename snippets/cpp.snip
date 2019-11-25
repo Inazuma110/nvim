@@ -432,3 +432,22 @@ abbr	mod_pow
 	    return a * mod_pow(a, p-1) % MOD;
 	  }
 	}
+
+snippet	binary_search
+abbr	binary_search
+	// f(x) がtrueな最小のx
+	ll f(ll tmp){
+	  // if(cond) return true;
+	}
+
+
+	ll bs(ll s, ll t){
+	  int ng = s - 1, ok = t;
+	  while (ng - ok > 1) {
+	    int mid = (ng + ok) / 2;
+	    (f(mid) ? ok : ng) = mid;
+	  }
+
+	  return ok;
+	}
+
