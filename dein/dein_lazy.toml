@@ -25,16 +25,13 @@ on_i = 1
 [[plugins]]
 repo = 'git@github.com:previm/previm.git'
 hook_add = '''
-  augroup PrevimSettings
-    autocmd!
-    autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
-    " autocmd BufNewFile,BufRead *.{uml} set filetype=uml
-  augroup END
+  autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 '''
 
 [[plugins]]
 repo = 'git@github.com:posva/vim-vue.git'
 on_ft = 'vue'
+on_i = 1
 
 
 # () complete
@@ -49,6 +46,7 @@ on_ft = 'vue'
 [[plugins]]
 repo = 'git@github.com:othree/yajs.vim.git'
 on_ft = 'javascript'
+on_i = 1
 
 # c, cpp connect header and sources.
 [[plugins]]
@@ -90,3 +88,7 @@ hook_add = '''
 '''
 on_ft = 'json'
 
+
+[[plugins]]
+repo = 'vim-scripts/fcitx.vim'
+on_i = 1

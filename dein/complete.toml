@@ -2,15 +2,16 @@
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
 on_event = 'InsertCharPre'
+on_i = 1
 hook_add = '''
   let g:deoplete#enable_at_startup = 1
-  let g:deoplete#auto_complete_delay = 0
-  let g:deoplete#auto_complete_start_length = 1
-  let g:deoplete#enable_camel_case = 0
-  let g:deoplete#enable_ignore_case = 0
-  let g:deoplete#enable_refresh_always = 0
-  let g:deoplete#enable_smart_case = 1
-  let g:deoplete#file#enable_buffer_path = 1
+  " let g:deoplete#auto_complete_delay = 0
+  " let g:deoplete#auto_complete_start_length = 1
+  " let g:deoplete#enable_camel_case = 0
+  " let g:deoplete#enable_ignore_case = 0
+  " let g:deoplete#enable_refresh_always = 0
+  " let g:deoplete#enable_smart_case = 1
+  " let g:deoplete#file#enable_buffer_path = 1
   let g:deoplete#max_list = 10000
   inoremap <expr><tab> pumvisible() ? "\<C-n>" :
   \ neosnippet#expandable_or_jumpable() ?
@@ -19,7 +20,6 @@ hook_add = '''
 hook_post_source = '''
   call deoplete#custom#source('neosnippet', 'rank', 3000)
 '''
-on_i = 1
 
 # default snippets
 [[plugins]]
@@ -70,11 +70,13 @@ on_i = 1
 # vimscript complete
 [[plugins]]
 repo = 'Shougo/neco-vim'
+depends = ['deoplete.nvim']
 on_i = 1
 
 # many lang complete
 [[plugins]]
 repo = 'Shougo/neco-syntax'
+depends = ['deoplete.nvim']
 on_i = 1
 
 
@@ -97,12 +99,13 @@ let g:neocomplete#text_mode_filetypes = {
   \ 'tex': 1,
   \ }
 '''
+depends = ['deoplete.nvim']
 
 
 [[plugins]]
 repo = 'git@github.com:wokalski/autocomplete-flow.git'
 on_ft = ['js', 'vue']
-
+on_i = 1
 
 
 # complete clang
@@ -125,14 +128,16 @@ on_ft = ['js', 'vue']
 # fish script completion
 [[plugins]]
 repo = 'git@github.com:dag/vim-fish.git'
+on_i = 1
+on_ft = ['sh', 'fish']
 
-[[plugins]]
-repo = 'https://github.com/Shougo/echodoc.vim.git'
-hook_add = '''
-  " set cmdheight=2
-  " let g:echodoc#enable_at_startup = 1
-  " let g:echodoc#type = 'floating'
-'''
+# [[plugins]]
+# repo = 'https://github.com/Shougo/echodoc.vim.git'
+# hook_add = '''
+#   let g:echodoc#enable_at_startup = 1
+#   set cmdheight=2
+#   let g:echodoc#type = 'floating'
+# '''
 
 [[plugins]]
 repo = 'ncm2/float-preview.nvim.git'
@@ -144,4 +149,4 @@ hook_add = '''
 [[plugins]]
 repo = 'https://github.com/tbodt/deoplete-tabnine.git'
 build = 'bash ./install.sh'
-
+on_i = 1

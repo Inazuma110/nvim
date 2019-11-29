@@ -47,9 +47,6 @@ hook_add = '''
 
 
 
-[[plugins]]
-repo = 'vim-scripts/fcitx.vim'
-
 # colorschema
 [[plugins]]
 repo = 'https://github.com/jacoborus/tender.vim'
@@ -208,16 +205,17 @@ hook_post_update = '''
   call firenvim#install(0)
 '''
 hook_add = '''
+  set guifont=Hack\ Nerd\ Font\ Regular
   let g:firenvim_config = {
      \ 'localSettings': {
          \ '.*': {
              \ 'selector': 'textarea',
              \ 'priority': 0,
          \ },
-         \ 'tweetdeck\.twitter\.com': {
-             \ 'selector': '',
-             \ 'priority': 1,
-         \ },
+         "\ 'tweetdeck\.twitter\.com': {
+         "    \ 'selector': '',
+         "    \ 'priority': 1,
+         "\ },
          \ 'google\.com': {
              \ 'selector': '',
              \ 'priority': 1,
@@ -245,6 +243,7 @@ hook_add = '''
   autocmd UIEnter * call OnUIEnter(deepcopy(v:event))
 
   au BufEnter github.com_*.txt set filetype=markdown
+  au BufEnter qiita.com_*.txt set filetype=markdown
   au BufEnter *notebooks*.txt set filetype=python
   au BufEnter factory.quantx.io*.txt set filetype=python
 
@@ -299,3 +298,14 @@ hook_add = '''
 
 [[plugins]]
 repo = '~/.cache/dein/repos/github.com/Inazuma110/ushitapunikiakun.vim'
+
+# [[plugins]]
+# repo = 'https://github.com/twitvim/twitvim'
+# hook_add = '''
+#   " let twitvim_browser_cmd = 'firefox'
+#   let twitvim_force_ssl = 1
+#   let twitvim_count = 40
+# '''
+
+[[plugins]]
+repo = 'https://github.com/Shougo/neoyank.vim'

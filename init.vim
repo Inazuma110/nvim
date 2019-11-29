@@ -7,6 +7,11 @@ if &compatible
   set nocompatible
 endif
 
+let s:HOME = expand('~')
+
+" path/to/nvim_dir
+let s:NVIM_HOME = s:HOME . '/.config/nvim/'
+
 " install dein.vim
 let s:cache_home = empty($XDG_CACHE_HOME) ? expand('~/.cache') : $XDG_CACHE_HOME
 let s:dein_dir = s:cache_home . '/dein'
@@ -16,34 +21,21 @@ if !isdirectory(s:dein_repo_dir)
 endif
 let &runtimepath = s:dein_repo_dir .",". &runtimepath
 
-let s:toml_file = fnamemodify(expand('<sfile>'), ':h').'/dein/dein.toml'
-let s:toml_statusline = fnamemodify(expand('<sfile>'), ':h').'/dein/statusline.toml'
-let s:toml_complete = fnamemodify(expand('<sfile>'), ':h').'/dein/complete.toml'
-let s:toml_lazyfile = fnamemodify(expand('<sfile>'), ':h').'/dein/dein_lazy.toml'
-let s:toml_denite_settings = fnamemodify(expand('<sfile>'), ':h').'/dein/denite.toml'
+let s:dein_rcfiles = split(glob(s:NVIM_HOME . './dein/*.toml'))
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
-  call dein#load_toml(s:toml_denite_settings)
-  call dein#load_toml(s:toml_file)
-  call dein#load_toml(s:toml_statusline)
-  call dein#load_toml(s:toml_complete)
-  call dein#load_toml(s:toml_lazyfile)
+  for s:file in s:dein_rcfiles
+    call dein#load_toml(s:file)
+  endfor
   call dein#end()
   call dein#save_state()
 endif
+
 if has('vim_starting') && dein#check_install()
   call dein#install()
 endif
-let g:HOME = expand('~')
 
-" path/to/nvim_dir
-let g:NVIM_HOME = g:HOME . '/.config/nvim'
-
-
-" execute('runtime!' . g:NVIM_HOME . '/rc/*.vim')
-
-" quick
-execute('source ' . g:NVIM_HOME . '/rc/path.vim')
-execute('source ' . g:NVIM_HOME . '/rc/keymap.vim')
-execute('source ' . g:NVIM_HOME . '/rc/option.vim')
-
+let s:rc_files = split(glob(s:NVIM_HOME . 'rc/*.vim'))
+for s:file in s:rc_files
+  execute('source ' . s:file)
+endfor
