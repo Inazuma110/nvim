@@ -44,14 +44,12 @@ hook_add = '''
   call denite#custom#source('file,file/rec,file/mru,file/old,file/point', 'converters', ['devicons_denite_converter'])
 '''
 
-
-
-
 # colorschema
 [[plugins]]
 repo = 'https://github.com/jacoborus/tender.vim'
 hook_add = '''
   au ColorScheme * highlight LineNr ctermfg=10
+  au ColorScheme * highlight NormalFloat guifg=#edf0f5 guibg=#ff0000
   au VimEnter * nested colorscheme tender
 '''
 
@@ -82,6 +80,8 @@ hook_add = '''
   let g:indentLine_char = '▏'
   let g:indentLine_first_char = '▏'
   " let g:indentLine_showFirstIndentLevel = -1
+  autocmd Filetype markdown let g:indentLine_setConceal=0
+  autocmd Filetype plaintex let g:indentLine_setConceal=0
 '''
 
 # execute script
@@ -275,11 +275,12 @@ hook_add = '''
 #   " コピーした文字列をハイライト付きで置換
 #   nnoremap subp y:OverCommandLine<CR>%s!<C-r>=substitute(@0, '!', '\\!', 'g')<CR>!!gI<Left><Left><Left>
 # '''
-# [[plugins]]
-# repo = 'https://github.com/itchyny/calendar.vim'
-# hook_add = '''
-#   let g:calendar_google_calendar = 1
-# '''
+
+[[plugins]]
+repo = 'https://github.com/itchyny/calendar.vim'
+hook_add = '''
+  let g:calendar_google_calendar = 1
+'''
 
 # [[plugins]]
 # repo = 'https://github.com/itchyny/vim-cursorword'
@@ -307,5 +308,3 @@ repo = '~/.cache/dein/repos/github.com/Inazuma110/ushitapunikiakun.vim'
 #   let twitvim_count = 40
 # '''
 
-[[plugins]]
-repo = 'https://github.com/Shougo/neoyank.vim'

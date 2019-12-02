@@ -151,5 +151,9 @@ hook_add = '''
       \ })
 '''
 
+[[plugins]]
+repo = 'https://github.com/Shougo/neoyank.vim'
+depends = ['denite.nvim']
+
 # [[plugins]]
 # repo = 'https://github.com/delphinus/vim-denite-node-modules'

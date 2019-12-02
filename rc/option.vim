@@ -17,6 +17,9 @@ set encoding=UTF-8
 set noswapfile
 set shortmess-=S
 set colorcolumn=80
+set conceallevel=0
+set pumblend=10
+" set winblend=5
 " set helplang=ja,en
 
 " 行末の空白削除
@@ -24,5 +27,9 @@ autocmd BufWritePre * :%s/\s\+$//ge
 autocmd FileType neosnippet setlocal noexpandtab
 autocmd FileType vue syntax sync fromstart
 autocmd BufWritePost *.tex :make
+autocmd FileType markdown set conceallevel=0
 
 command! Reboot source ~/.config/nvim/init.vim
+
+runtime macros/matchit.vim
+let b:match_words = '\<if\>:\<endif\>'

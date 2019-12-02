@@ -51,11 +51,6 @@ hook_add = '''
   \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
   inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-  " For conceal markers.
-  if has('conceal')
-    set conceallevel=2 concealcursor=niv
-  endif
 '''
 depends = ['deoplete.nvim']
 
@@ -66,12 +61,14 @@ depends = ['deoplete.nvim']
 repo = 'git@github.com:Shougo/neoinclude.vim.git'
 depends = ['deoplete.nvim']
 on_i = 1
+on_ft = ['cpp', 'c']
 
 # vimscript complete
 [[plugins]]
 repo = 'Shougo/neco-vim'
 depends = ['deoplete.nvim']
 on_i = 1
+on_ft = ['vim']
 
 # many lang complete
 [[plugins]]
@@ -99,6 +96,7 @@ let g:neocomplete#text_mode_filetypes = {
   \ 'tex': 1,
   \ }
 '''
+on_i=1
 depends = ['deoplete.nvim']
 
 
@@ -133,10 +131,11 @@ on_ft = ['sh', 'fish']
 
 # [[plugins]]
 # repo = 'https://github.com/Shougo/echodoc.vim.git'
-# hook_add = '''
+# on_event = 'CompleteDone'
+# hook_source = '''
 #   let g:echodoc#enable_at_startup = 1
 #   set cmdheight=2
-#   let g:echodoc#type = 'floating'
+#   let g:echodoc#type = 'virtual'
 # '''
 
 [[plugins]]

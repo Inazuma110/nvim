@@ -13,13 +13,13 @@ on_i = 1
 
 
 # markdown
-# [[plugins]]
-# repo = 'rcmdnk/vim-markdown'
-# on_ft = ['md', 'markdown']
-# on_i = 1
-# hook_add = '''
-#   set foldlevel=100
-# '''
+[[plugins]]
+repo = 'rcmdnk/vim-markdown'
+on_ft = ['md', 'markdown']
+on_i = 1
+hook_add = '''
+  set foldlevel=100
+'''
 
 # preview markdown
 [[plugins]]
@@ -38,6 +38,9 @@ on_i = 1
 # [[plugins]]
 # repo = 'cohama/lexima.vim'
 # on_i = 1
+# hook_add = '''
+#   let g:lexima_enable_basic_rules = 0
+# '''
 
 # group programming
 # [[plugins]]
@@ -92,3 +95,10 @@ on_ft = 'json'
 [[plugins]]
 repo = 'vim-scripts/fcitx.vim'
 on_i = 1
+
+[[plugins]]
+repo = 'rhysd/vim-gfm-syntax'
+on_ft = ['md', 'markdown']
+hook_add = '''
+  " let g:gfm_syntax_emoji_conceal=1
+'''
