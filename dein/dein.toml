@@ -301,6 +301,10 @@ hook_add = '''
 repo = '~/.cache/dein/repos/github.com/Inazuma110/ushitapunikiakun.vim'
 
 # [[plugins]]
+# repo = 'Inazuma110/disarrow.vim'
+
+
+# [[plugins]]
 # repo = 'https://github.com/twitvim/twitvim'
 # hook_add = '''
 #   " let twitvim_browser_cmd = 'firefox'

@@ -28,8 +28,9 @@ autocmd FileType neosnippet setlocal noexpandtab
 autocmd FileType vue syntax sync fromstart
 autocmd BufWritePost *.tex :make
 autocmd FileType markdown set conceallevel=0
+autocmd FileType help set conceallevel=0
 
 command! Reboot source ~/.config/nvim/init.vim
 
 runtime macros/matchit.vim
-let b:match_words = '\<if\>:\<endif\>'
+let b:match_words = '\<if\>:\<endif\>,<:>'

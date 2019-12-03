@@ -102,3 +102,8 @@ on_ft = ['md', 'markdown']
 hook_add = '''
   " let g:gfm_syntax_emoji_conceal=1
 '''
+
+[[plugins]]
+repo = 'https://github.com/tweekmonster/helpful.vim'
+on_ft = ['md', 'markdown', 'help']
+
