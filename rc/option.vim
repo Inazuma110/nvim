@@ -20,7 +20,8 @@ set colorcolumn=80
 set conceallevel=0
 set pumblend=10
 " set winblend=5
-" set helplang=ja,en
+"set helplang=ja,en
+highlight NormalFloat guifg=#edf0f5 guibg=#ff0000
 
 " 行末の空白削除
 autocmd BufWritePre * :%s/\s\+$//ge
@@ -29,6 +30,11 @@ autocmd FileType vue syntax sync fromstart
 autocmd BufWritePost *.tex :make
 autocmd FileType markdown set conceallevel=0
 autocmd FileType help set conceallevel=0
+
+if has("persistent_undo")
+  set undodir=$HOME."/.undodir"
+  set undofile
+endif
 
 command! Reboot source ~/.config/nvim/init.vim
 

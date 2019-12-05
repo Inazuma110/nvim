@@ -49,7 +49,6 @@ hook_add = '''
 repo = 'https://github.com/jacoborus/tender.vim'
 hook_add = '''
   au ColorScheme * highlight LineNr ctermfg=10
-  au ColorScheme * highlight NormalFloat guifg=#edf0f5 guibg=#ff0000
   au VimEnter * nested colorscheme tender
 '''
 
@@ -299,6 +298,9 @@ hook_add = '''
 
 [[plugins]]
 repo = '~/.cache/dein/repos/github.com/Inazuma110/ushitapunikiakun.vim'
+hook_add = '''
+  " let g:ushitapunikiakun#insert_char = '🐮'
+'''
 
 # [[plugins]]
 # repo = 'Inazuma110/disarrow.vim'
