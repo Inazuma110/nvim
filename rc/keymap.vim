@@ -1,7 +1,7 @@
 " keymap
-inoremap <silent> jj <ESC>
-inoremap <silent> jk <ESC>
-inoremap <silent> <C-l> <DEL>
+inoremap jj <ESC>
+inoremap jk <ESC>
+inoremap <C-l> <DEL>
 
 nnoremap sj <C-w>j
 nnoremap sk <C-w>k

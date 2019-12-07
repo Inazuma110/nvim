@@ -120,8 +120,9 @@ on_i = 1
 #
 
 # emoji
-# [[plugins]]
-# repo = 'git@github.com:fszymanski/deoplete-emoji.git'
+[[plugins]]
+repo = 'git@github.com:fszymanski/deoplete-emoji.git'
+on_i = 1
 
 # fish script completion
 [[plugins]]
@@ -140,6 +141,7 @@ on_ft = ['sh', 'fish']
 
 [[plugins]]
 repo = 'ncm2/float-preview.nvim.git'
+on_i=1
 hook_add = '''
   let g:float_preview#docked = 0
   set completeopt-=preview

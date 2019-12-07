@@ -74,7 +74,6 @@ hook_add = '''
     ShowtimeStart
     IndentLinesDisable
   endfunction
-
   command! InazumaShowtimeStart call s:MyShowtimeStart()
 '''
 on_ft = 'md'
@@ -106,4 +105,3 @@ hook_add = '''
 [[plugins]]
 repo = 'https://github.com/tweekmonster/helpful.vim'
 on_ft = ['md', 'markdown', 'help']
-

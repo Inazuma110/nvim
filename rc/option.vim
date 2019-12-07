@@ -32,7 +32,7 @@ autocmd FileType markdown set conceallevel=0
 autocmd FileType help set conceallevel=0
 
 if has("persistent_undo")
-  set undodir=$HOME."/.undodir"
+  set undodir=$HOME/.undodir
   set undofile
 endif
 

@@ -21,11 +21,16 @@ if !isdirectory(s:dein_repo_dir)
 endif
 let &runtimepath = s:dein_repo_dir .",". &runtimepath
 
-let s:dein_rcfiles = split(glob(s:NVIM_HOME . './dein/*.toml'))
+let s:dein_rcfiles = split(glob(s:NVIM_HOME . './plugins/normal/*.toml'))
+let s:lazydein_rcfiles = split(glob(s:NVIM_HOME . './plugins/lazy/*.toml'))
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
   for s:file in s:dein_rcfiles
-    call dein#load_toml(s:file)
+    call dein#load_toml(s:file, {'lazy': 0})
+  endfor
+
+  for s:file in s:lazydein_rcfiles
+    call dein#load_toml(s:file, {'lazy': 1})
   endfor
   call dein#end()
   call dein#save_state()

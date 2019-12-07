@@ -2,9 +2,8 @@
 [[plugins]]
 repo = 'Inazuma110/air.vim'
 
-# lint
-# [[plugins]]
-# repo = 'w0rp/ale'
+[[plugins]]
+repo = 'Shougo/dein.vim'
 
 # win resize
 [[plugins]]
