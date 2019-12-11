@@ -25,8 +25,9 @@ hook_add = '''
 [[plugins]]
 repo = 'git@github.com:previm/previm.git'
 hook_add = '''
-  autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+  " autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 '''
+on_ft = ['md', 'markdown']
 
 [[plugins]]
 repo = 'git@github.com:posva/vim-vue.git'

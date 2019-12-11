@@ -304,12 +304,8 @@ hook_add = '''
 # [[plugins]]
 # repo = 'Inazuma110/disarrow.vim'
 
+[[plugins]]
+repo = 'https://github.com/andymass/vim-matchup'
 
-# [[plugins]]
-# repo = 'https://github.com/twitvim/twitvim'
-# hook_add = '''
-#   " let twitvim_browser_cmd = 'firefox'
-#   let twitvim_force_ssl = 1
-#   let twitvim_count = 40
-# '''
-
+[[plugins]]
+repo = 'vim-jp/vimdoc-ja'

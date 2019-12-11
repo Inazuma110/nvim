@@ -20,7 +20,7 @@ set colorcolumn=80
 set conceallevel=0
 set pumblend=10
 " set winblend=5
-"set helplang=ja,en
+set helplang=ja,en
 highlight NormalFloat guifg=#edf0f5 guibg=#ff0000
 
 " 行末の空白削除
@@ -38,5 +38,5 @@ endif
 
 command! Reboot source ~/.config/nvim/init.vim
 
-runtime macros/matchit.vim
-let b:match_words = '\<if\>:\<endif\>,<:>'
+" runtime macros/matchit.vim
+" let b:match_words = '\<if\>:\<endif\>,<:>'
