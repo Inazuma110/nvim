@@ -57,10 +57,6 @@ on_i = 1
 repo = 'vim-scripts/a.vim'
 on_ft = ['c', 'cpp']
 
-[[plugins]]
-repo = 'git@github.com:aklt/plantuml-syntax.git'
-on_ft = ['uml']
-
 # toml highlight
 [[plugins]]
 repo = 'cespare/vim-toml'
@@ -77,7 +73,7 @@ hook_add = '''
   endfunction
   command! InazumaShowtimeStart call s:MyShowtimeStart()
 '''
-on_ft = 'md'
+on_ft = ['md', 'markdown']
 
 [[plugins]]
 repo = 'easymotion/vim-easymotion'
@@ -105,4 +101,4 @@ hook_add = '''
 
 [[plugins]]
 repo = 'https://github.com/tweekmonster/helpful.vim'
-on_ft = ['md', 'markdown', 'help']
+on_ft = ['md', 'markdown', 'help', 'vim']

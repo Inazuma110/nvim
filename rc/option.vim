@@ -20,6 +20,7 @@ set colorcolumn=80
 set conceallevel=0
 set pumblend=10
 " set winblend=5
+set wildmode=longest:full,full
 set helplang=ja,en
 highlight NormalFloat guifg=#edf0f5 guibg=#ff0000
 
@@ -37,6 +38,3 @@ if has("persistent_undo")
 endif
 
 command! Reboot source ~/.config/nvim/init.vim
-
-" runtime macros/matchit.vim
-" let b:match_words = '\<if\>:\<endif\>,<:>'

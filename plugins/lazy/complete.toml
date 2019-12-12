@@ -119,11 +119,6 @@ on_i = 1
 # depends = ['deoplete.nvim']
 #
 
-# emoji
-[[plugins]]
-repo = 'git@github.com:fszymanski/deoplete-emoji.git'
-on_i = 1
-
 # fish script completion
 [[plugins]]
 repo = 'git@github.com:dag/vim-fish.git'
