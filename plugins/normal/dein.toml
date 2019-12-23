@@ -295,6 +295,10 @@ hook_add = '''
 # [[plugins]]
 # repo = 'https://github.com/johngrib/vim-game-code-break'
 
+# [[plugins]]
+# repo = 'https://github.com/vim/killersheep'
+
+
 [[plugins]]
 repo = '~/.cache/dein/repos/github.com/Inazuma110/ushitapunikiakun.vim'
 hook_add = '''

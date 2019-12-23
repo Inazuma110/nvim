@@ -76,6 +76,12 @@ repo = 'Shougo/neco-syntax'
 depends = ['deoplete.nvim']
 on_i = 1
 
+[[plugins]]
+repo = 'Inazuma110/deoplete-greek'
+on_i = 1
+depends = ['deoplete.nvim']
+
+
 
  # complete English word
 [[plugins]]

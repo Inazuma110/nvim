@@ -15,9 +15,9 @@ nnoremap sL <C-w>L
 nnoremap <Leader>j gt
 nnoremap <Leader>k gT
 
-tnoremap <silent> <C-[> <C-\><C-n>
-tnoremap <silent> <C-p> <UP>
-tnoremap <silent> <C-n> <DOWN>
-tnoremap <silent> <C-f> <C-f>
+tnoremap <C-[> <C-\><C-n>
+tnoremap <C-p> <UP>
+tnoremap <C-n> <DOWN>
+
 
 " let g:mapleader = ' '

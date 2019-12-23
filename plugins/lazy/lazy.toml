@@ -102,3 +102,14 @@ hook_add = '''
 [[plugins]]
 repo = 'https://github.com/tweekmonster/helpful.vim'
 on_ft = ['md', 'markdown', 'help', 'vim']
+
+[[plugins]]
+repo = 'https://github.com/vim-jp/autofmt'
+on_ft = ['help']
+hook_add = '''
+  set formatexpr=autofmt#compat#formatexpr()
+  let autofmt_allow_over_tw = 1
+  set formatoptions+=mM
+  set smartindent
+'''
+
