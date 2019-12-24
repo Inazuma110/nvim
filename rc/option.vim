@@ -31,6 +31,7 @@ autocmd FileType vue syntax sync fromstart
 autocmd BufWritePost *.tex :make
 autocmd FileType markdown set conceallevel=0
 autocmd FileType help set conceallevel=0
+autocmd BufNewFile,BufRead *.jl set filetype=julia
 
 if has("persistent_undo")
   set undodir=$HOME/.undodir

@@ -152,3 +152,10 @@ hook_add = '''
 repo = 'https://github.com/tbodt/deoplete-tabnine.git'
 build = 'bash ./install.sh'
 on_i = 1
+
+[[plugins]]
+repo = 'https://github.com/JuliaEditorSupport/julia-vim'
+on_ft = ['julia', 'jl']
+hook_add = '''
+  let g:default_julia_version = "1.3"
+'''
