@@ -104,7 +104,7 @@ hook_add = '''
 '''
 on_i=1
 depends = ['deoplete.nvim']
-
+#
 
 [[plugins]]
 repo = 'git@github.com:wokalski/autocomplete-flow.git'
@@ -153,9 +153,11 @@ repo = 'https://github.com/tbodt/deoplete-tabnine.git'
 build = 'bash ./install.sh'
 on_i = 1
 
-[[plugins]]
-repo = 'https://github.com/JuliaEditorSupport/julia-vim'
-on_ft = ['julia', 'jl']
-hook_add = '''
-  let g:default_julia_version = "1.3"
-'''
+# [[plugins]]
+# repo = 'https://github.com/JuliaEditorSupport/julia-vim'
+# on_ft = ['julia', 'jl']
+# hook_add = '''
+#   " let g:default_julia_version = "1.3"
+#   " let g:latex_to_unicode_keymap = 1
+#   " noremap <expr> <F7> LaTeXtoUnicode#Toggle()
+# '''
