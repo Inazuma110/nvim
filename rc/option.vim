@@ -18,11 +18,13 @@ set noswapfile
 set shortmess-=S
 set colorcolumn=80
 set conceallevel=0
-set pumblend=10
 " set winblend=5
 set wildmode=longest:full,full
 set helplang=ja,en
-highlight NormalFloat guifg=#edf0f5 guibg=#ff0000
+set termguicolors
+set pumblend=10
+set winblend=20
+" highlight NormalFloat guifg=#edf0f5 guibg=#ff0000
 
 " 行末の空白削除
 autocmd BufWritePre * :%s/\s\+$//ge
