@@ -103,240 +103,62 @@ hook_add = '''
   nmap Y <Plug>(operator-flashy)$
 '''
 
-# [[plugins]]
-# repo = 'git@github.com:Shougo/defx.nvim.git'
-
 # open browser from vim
 [[plugins]]
 repo = 'git@github.com:tyru/open-browser.vim.git'
 
-# [[plugins]]
-# repo = 'https://github.com/neoclide/coc.nvim'
-# rev = 'release'
-# hook_add = '''
-#   " " if hidden is not set, TextEdit might fail.
-#   " set hidden
-#   "
-#   " " Some servers have issues with backup files, see #649
-#   " set nobackup
-#   " set nowritebackup
-#   "
-#   " " Better display for messages
-#   " set cmdheight=2
-#   "
-#   " " You will have bad experience for diagnostic messages when it's default 4000.
-#   " " set updatetime=300
-#   "
-#   " " don't give |ins-completion-menu| messages.
-#   " set shortmess+=c
-#   "
-#   " " always show signcolumns
-#   " set signcolumn=yes
-#   "
-#   " inoremap <silent><expr> <TAB>
-#   "      \ pumvisible() ? "\<C-n>" :
-#   "      \ <SID>check_back_space() ? "\<TAB>" :
-#   "      \ coc#refresh()
-#   " inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-#   "
-#   " function! s:check_back_space() abort
-#   "   let col = col('.') - 1
-#   "   return !col || getline('.')[col - 1]  =~# '\s'
-#   " endfunction
-#   "
-#   " Use <C-l> for trigger snippet expand.
-#   " imap <C-k> <Plug>(coc-snippets-expand)
-#
-#   " inoremap <silent><expr> <TAB>
-#   "      \ pumvisible() ? coc#_select_confirm() :
-#   "      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-#   "      \ <SID>check_back_space() ? "\<TAB>" :
-#   "      \ coc#refresh()
-#   "
-#   " function! s:check_back_space() abort
-#   "   let col = col('.') - 1
-#   "   return !col || getline('.')[col - 1]  =~# '\s'
-#   " endfunction
-#   "
-#   " let g:coc_snippet_next = '<tab>'
-#   "
-#   " " Use <C-l> for trigger snippet expand.
-#   " " imap <C-k> <Plug>(coc-snippets-expand)
-#   "
-#   " " Use <C-j> for select text for visual placeholder of snippet.
-#   " " vmap <C-j> <Plug>(coc-snippets-select)
-#   "
-#   " " Use <C-j> for jump to next placeholder, it's default of coc.nvim
-#   " " let g:coc_snippet_next = '<c-j>'
-#   "
-#   " " Use <C-k> for jump to previous placeholder, it's default of coc.nvim
-#   " " let g:coc_snippet_prev = '<c-k>'
-#   "
-#   " " Use <C-j> for both expand and jump (make expand higher priority.)
-#   " " imap <C-j> <Plug>(coc-snippets-expand-jump)
-#   "
-#   " " Remap keys for gotos
-#   " nmap <silent> gd <Plug>(coc-definition)
-#   " nmap <silent> gy <Plug>(coc-type-definition)
-#   " nmap <silent> gi <Plug>(coc-implementation)
-#   " nmap <silent> gr <Plug>(coc-references)
-#   "
-#   " " Use K to show documentation in preview window
-#   " nnoremap <silent> K :call <SID>show_documentation()<CR>
-#   "
-#   " function! s:show_documentation()
-#   "   if (index(['vim','help'], &filetype) >= 0)
-#   "     execute 'h '.expand('<cword>')
-#   "   else
-#   "     call CocAction('doHover')
-#   "   endif
-#   " endfunction
-#   "
-#   " " Highlight symbol under cursor on CursorHold
-#   " autocmd CursorHold * silent call CocActionAsync('highlight')
-#   "
-#   " " Remap for rename current word
-#   " nmap <leader>rn <Plug>(coc-rename)
-#   "
-#   " " Remap for format selected region
-#   " xmap <leader>f  <Plug>(coc-format-selected)
-#   " nmap <leader>f  <Plug>(coc-format-selected)
-#   "
-#   " augroup mygroup
-#   "   autocmd!
-#   "   " Setup formatexpr specified filetype(s).
-#   "   autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-#   "   " Update signature help on jump placeholder
-#   "   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-#   " augroup end
-#   "
-#   " " Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
-#   " xmap <leader>a  <Plug>(coc-codeaction-selected)
-#   " nmap <leader>a  <Plug>(coc-codeaction-selected)
-#   "
-#   " " Remap for do codeAction of current line
-#   " nmap <leader>ac  <Plug>(coc-codeaction)
-#   " " Fix autofix problem of current line
-#   " nmap <leader>qf  <Plug>(coc-fix-current)
-#   "
-#   " " Create mappings for function text object, requires document symbols feature of languageserver.
-#   " xmap if <Plug>(coc-funcobj-i)
-#   " xmap af <Plug>(coc-funcobj-a)
-#   " omap if <Plug>(coc-funcobj-i)
-#   " omap af <Plug>(coc-funcobj-a)
-#   "
-#   " " Use <TAB> for select selections ranges, needs server support, like: coc-tsserver, coc-python
-#   " nmap <silent> <TAB> <Plug>(coc-range-select)
-#   " xmap <silent> <TAB> <Plug>(coc-range-select)
-#   "
-#   " " Use `:Format` to format current buffer
-#   " command! -nargs=0 Format :call CocAction('format')
-#   "
-#   " " Use `:Fold` to fold current buffer
-#   " command! -nargs=? Fold :call     CocAction('fold', <f-args>)
-#   "
-#   " " use `:OR` for organize import of current buffer
-#   " command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
-#   "
-#   " " Add status line support, for integration with other plugin, checkout `:h coc-status`
-#   " set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-#   "
-#   " " Using CocList
-#   " " Show all diagnostics
-#   " nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
-#   " " Manage extensions
-#   " nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
-#   " " Show commands
-#   " nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
-#   " " Find symbol of current document
-#   " nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
-#   " " Search workspace symbols
-#   " nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
-#   " " Do default action for next item.
-#   " nnoremap <silent> <space>j  :<C-u>CocNext<CR>
-#   " " Do default action for previous item.
-#   " nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
-#   " " Resume latest coc list
-#   " nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
-# '''
+[[plugins]]
+repo = 'https://github.com/neoclide/coc.nvim'
+rev = 'release'
+hook_add = '''
+  let s:path = expand('~/.config/nvim/plugins/normal/coc.vim')
+  execute('source ' . s:path)
+'''
 
 
 # lsp
-[[plugins]]
-repo = 'autozimu/LanguageClient-neovim'
-build = 'bash install.sh'
-rev = 'next'
-hook_add = '''
-    " set completefunc=LanguageClient#complete
-    let s:node = empty($XDG_CONFIG_HOME) ? expand('$HOME/.config') : $XDG_CONFIG_HOME
-    let s:julia_exe = '/usr/local/bin/julia'
-    let s:julia_lsp_script = expand('~') . '/.config/nvim/plugins/normal/startlsp.jl'
-
-    let g:LanguageClient_serverCommands = {
-        \ 'c': ['clangd', '-compile-commands-dir=' . getcwd() . '/build'],
-        "\ 'cpp': ['clangd', '-compile-commands-dir=' . getcwd() . '/build'],
-        \ 'cpp': ['clangd', '--header-insertion=never'],
-        \ 'python': ['pyls'],
-        "\ 'java': ['/usr/local/bin/jdtls', '-data', getcwd()]
-        \ 'java': ['/home/inazuma/java-language-server/dist/lang_server_linux.sh'],
-        \ 'julia': [s:julia_exe, '--startup-file=no', s:julia_lsp_script],
-    \ }
-
-    " not stop completion $ & /
-    set hidden
-    set signcolumn=yes
-    let g:LanguageClient_hoverPreview = "Never"
-
-    nnoremap <F5> :call LanguageClient_contextMenu()<CR>
-    " Or map each action separately
-    nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-    nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-    nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
-    command! LSPFormat :call LanguageClient#textDocument_formatting()
-
-    let g:LanguageClient_diagnosticsDisplay = {
-     \   1:{
-     \         "name": "Error",
-     \         "texthl": "ALEError",
-     \         "signText": "💩",
-     \         "signTexthl": "ALEErrorSign",
-     \         "virtualTexthl": "Error",
-     \     },
-    \ }
-'''
-
 # [[plugins]]
-# repo = 'prabirshrestha/async.vim'
-
-# [[plugins]]
-# repo = 'https://github.com/prabirshrestha/vim-lsp'
+# repo = 'autozimu/LanguageClient-neovim'
+# build = 'bash install.sh'
+# rev = 'next'
+# hook_add = '''
+#     " set completefunc=LanguageClient#complete
+#     let s:node = empty($XDG_CONFIG_HOME) ? expand('$HOME/.config') : $XDG_CONFIG_HOME
+#     let s:julia_exe = '/usr/local/bin/julia'
+#     let s:julia_lsp_script = expand('~') . '/.config/nvim/plugins/normal/startlsp.jl'
 #
-# [[plugins]]
-# repo = 'https://github.com/mattn/vim-lsp-settings'
-# hook_add = '''
-#   let g:lsp_settings_servers_dir = '~/.config/'
+#     let g:LanguageClient_serverCommands = {
+#        \ 'c': ['clangd', '-compile-commands-dir=' . getcwd() . '/build'],
+#         "\ 'cpp': ['clangd', '-compile-commands-dir=' . getcwd() . '/build'],
+#        \ 'cpp': ['clangd', '--header-insertion=never'],
+#        \ 'python': ['pyls'],
+#         "\ 'java': ['/usr/local/bin/jdtls', '-data', getcwd()]
+#        \ 'java': ['/home/inazuma/java-language-server/dist/lang_server_linux.sh'],
+#        \ 'julia': [s:julia_exe, '--startup-file=no', s:julia_lsp_script],
+#    \ }
+#
+#     " not stop completion $ & /
+#     set hidden
+#     set signcolumn=yes
+#     let g:LanguageClient_hoverPreview = "Never"
+#
+#     nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+#     " Or map each action separately
+#     nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+#     nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+#     nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+#     command! LSPFormat :call LanguageClient#textDocument_formatting()
+#
+#     let g:LanguageClient_diagnosticsDisplay = {
+#     \   1:{
+#     \         "name": "Error",
+#     \         "texthl": "ALEError",
+#     \         "signText": "💩",
+#     \         "signTexthl": "ALEErrorSign",
+#     \         "virtualTexthl": "Error",
+#     \     },
+#    \ }
 # '''
-
-
-# hook_add = '''
-#   if executable('pyls')
-#       " pip install python-language-server
-#       au User lsp_setup call lsp#register_server({
-#          \ 'name': 'pyls',
-#          \ 'cmd': {server_info->['pyls']},
-#          \ 'whitelist': ['python'],
-#          \ })
-#   endif
-#   if executable('clangd')
-#       au User lsp_setup call lsp#register_server({
-#          \ 'name': 'clangd',
-#          \ 'cmd': {server_info->['clangd']},
-#          \ 'whitelist': ['cpp'],
-#          \ })
-#   endif
-# '''
-
-
 
 # [[plugins]]
 # repo = 'https://github.com/kusabashira/vim-nicomment.git'
@@ -461,12 +283,9 @@ hook_add = '''
 # [[plugins]]
 # repo = 'https://github.com/johngrib/vim-game-code-break'
 
-# [[plugins]]
-# repo = 'https://github.com/vim/killersheep'
-
 
 [[plugins]]
-repo = '~/.cache/dein/repos/github.com/Inazuma110/ushitapunikiakun.vim'
+repo = 'Inazuma110/ushitapunikiakun.vim'
 hook_add = '''
   " let g:ushitapunikiakun#insert_str = '🐮'
 '''
@@ -482,4 +301,3 @@ repo = 'vim-jp/vimdoc-ja'
 
 [[plugins]]
 repo = 'https://github.com/JuliaEditorSupport/julia-vim'
-
