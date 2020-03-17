@@ -25,6 +25,7 @@ let s:dein_rcfiles = split(glob(s:NVIM_HOME . './plugins/normal/*.toml'))
 let s:lazydein_rcfiles = split(glob(s:NVIM_HOME . './plugins/lazy/*.toml'))
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
+  call dein#load_toml(expand('~/.config/nvim/plugins/coc/coc.toml'))
   for s:file in s:dein_rcfiles
     call dein#load_toml(s:file, {'lazy': 0})
   endfor

@@ -1,6 +1,5 @@
 " keymap
 inoremap jj <ESC>
-inoremap jk <ESC>
 inoremap <C-l> <DEL>
 
 nnoremap sj <C-w>j

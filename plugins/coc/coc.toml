@@ -1,0 +1,8 @@
+[[plugins]]
+repo = 'https://github.com/neoclide/coc.nvim'
+rev = 'release'
+merged = 0
+hook_add = '''
+  let s:path = expand('~/.config/nvim/plugins/coc/coc.vim')
+  execute('source ' . s:path)
+'''

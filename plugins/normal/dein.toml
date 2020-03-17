@@ -107,13 +107,6 @@ hook_add = '''
 [[plugins]]
 repo = 'git@github.com:tyru/open-browser.vim.git'
 
-[[plugins]]
-repo = 'https://github.com/neoclide/coc.nvim'
-rev = 'release'
-hook_add = '''
-  let s:path = expand('~/.config/nvim/plugins/normal/coc.vim')
-  execute('source ' . s:path)
-'''
 
 
 # lsp
@@ -299,5 +292,5 @@ repo = 'https://github.com/andymass/vim-matchup'
 [[plugins]]
 repo = 'vim-jp/vimdoc-ja'
 
-[[plugins]]
-repo = 'https://github.com/JuliaEditorSupport/julia-vim'
+# [[plugins]]
+# repo = 'https://github.com/JuliaEditorSupport/julia-vim'

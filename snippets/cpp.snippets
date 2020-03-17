@@ -1,0 +1,157 @@
+snippet hudou "Description" b
+cout << setprecision(15);
+
+snippet digsum "digit sum" b
+ll digitSum(int n)
+{
+  if(n < 10) return n;
+  else return n % 10 + digitSum(n / 10);
+}
+
+snippet factoring "素因数分解" b
+vector<pair<ll, int>> factoring(ll a){
+  vector<pair<ll, int>> v;
+  for (int i = 2; i <= a; i++) {
+    if(a % i == 0){
+      int count = 0;
+      while(a % i == 0){
+        count++;
+        a /= i;
+      }
+      v.push_back({i, count});
+    }
+  }
+  return v;
+}
+
+snippet gcd_lcm "gcd & lcm" b
+ll gcd(ll a, ll b)
+{
+  if(b == 0) return a;
+  else return gcd(b, a % b);
+  // return (b == 0) ? a : gcd(b, a % b);
+}
+
+ll lcm(ll a, ll b)
+{
+  ll g = gcd(a, b);
+  return a / g * b;
+}
+
+snippet unionfind "UnionFind algorithm" b
+struct UnionFind {
+  // 要素に対応する値は自分の根。根は要素数の-1倍したものを代入する。
+  // 根ならそのグループの要素数(負)が、子であれば親の番号が入る。初期値-1。
+  vector<int> uni;
+  UnionFind(){
+    uni = vector<int>(100100, -1);
+  }
+
+  // 頂点aの所属するグループを調べる。
+  int root(int a)
+  {
+    // uni[a]が負の値なら親はa自身
+    if (uni[a] < 0) return a;
+    // 正の値であれば、親ルートを調べ戻り値で根に直接つなぐ。
+    else {
+      uni[a] = root(uni[a]);
+      return uni[a];
+      // return uni[a] = root(uni[a]);
+    }
+  }
+
+  // 頂点aとbをつなぐ、もともと同じグループの場合falseを返す。
+  bool connect(int a, int b)
+  {
+    a = root(a);
+    b = root(b);
+    if (a == b) return false;
+
+    // aを大きなグループにしたいので、逆であれば入れ替える。
+    if (uni[a] > uni[b])
+    {
+      int hoge = a;
+      a = b;
+      b = hoge;
+    }
+
+    //aとbを結合し、bをaの親とする。
+    uni[a] += uni[b];
+    uni[b] = a;
+    return true;
+  }
+
+  //  頂点a, bが同じグループか
+  bool isConnect(int a, int b)
+  {
+    return root(a) == root(b);
+  }
+
+  // 頂点aを含むグループの頂点数を調べる
+  int size(int a)
+  {
+    return -uni[root(a)];
+  }
+
+};
+
+snippet logn "log" b
+long double logn(int base, int tv) {
+  return log(tv) / log(base);
+}
+
+snippet mint "mod int struct" b
+struct mint {
+  ll x; // typedef long long ll;
+  mint(ll x=0):x((x%mod+mod)%mod){}
+  mint operator-() const { return mint(-x);}
+  mint& operator+=(const mint a) {
+    if ((x += a.x) >= mod) x -= mod;
+    return *this;
+  }
+  mint& operator-=(const mint a) {
+    if ((x += mod-a.x) >= mod) x -= mod;
+    return *this;
+  }
+  mint& operator*=(const mint a) { (x *= a.x) %= mod; return *this;}
+  mint operator+(const mint a) const { return mint(*this) += a;}
+  mint operator-(const mint a) const { return mint(*this) -= a;}
+  mint operator*(const mint a) const { return mint(*this) *= a;}
+  mint pow(ll t) const {
+    if (!t) return 1;
+    mint a = pow(t>>1);
+    a *= a;
+    if (t&1) a *= *this;
+    return a;
+  }
+
+  // for prime mod
+  mint inv() const { return pow(mod-2);}
+  mint& operator/=(const mint a) { return *this *= a.inv();}
+  mint operator/(const mint a) const { return mint(*this) /= a;}
+};
+istream& operator>>(istream& is, const mint& a) { return is >> a.x;}
+ostream& operator<<(ostream& os, const mint& a) { return os << a.x;}
+
+snippet comb_mod "calc combination mod" b
+const int MAX = 510000;
+ll fac[MAX], finv[MAX], inv[MAX];
+
+// テーブルを作る前処理
+void comb_init() {
+    fac[0] = fac[1] = 1;
+    finv[0] = finv[1] = 1;
+    inv[1] = 1;
+    for (int i = 2; i < MAX; i++){
+        fac[i] = fac[i - 1] * i % MOD;
+        inv[i] = MOD - inv[MOD%i] * (MOD / i) % MOD;
+        finv[i] = finv[i - 1] * inv[i] % MOD;
+    }
+}
+
+// 二項係数計算
+ll com(int n, int k){
+    if (n < k) return 0;
+    if (n < 0 || k < 0) return 0;
+    return fac[n] * (finv[k] * finv[n - k] % MOD) % MOD;
+}
