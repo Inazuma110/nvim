@@ -113,3 +113,7 @@ hook_add = '''
   set smartindent
 '''
 
+[[plugins]]
+repo = 'puremourning/vimspector'
+on_ft = ['python', 'javascript']
+build = './install_gadget.py --enable-python --force-enable-node'

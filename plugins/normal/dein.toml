@@ -307,9 +307,17 @@ hook_add = '''
 
 # [[plugins]]
 # repo = 'prabirshrestha/async.vim'
-#
+
 # [[plugins]]
 # repo = 'https://github.com/prabirshrestha/vim-lsp'
+#
+# [[plugins]]
+# repo = 'https://github.com/mattn/vim-lsp-settings'
+# hook_add = '''
+#   let g:lsp_settings_servers_dir = '~/.config/'
+# '''
+
+
 # hook_add = '''
 #   if executable('pyls')
 #       " pip install python-language-server
@@ -399,9 +407,8 @@ hook_add = '''
   endfunction
   autocmd UIEnter * call OnUIEnter(deepcopy(v:event))
 
-  au BufEnter github.com_*.txt set filetype=markdown
-  au BufEnter qiita.com_*.txt set filetype=markdown
-  au BufEnter *notebooks*.txt set filetype=python
+  au BufEnter overleaf*.txt set filetype=tex
+  au BufEnter *.txt set filetype=markdown
   au BufEnter factory.quantx.io*.txt set filetype=python
 
   let g:dont_write = v:false

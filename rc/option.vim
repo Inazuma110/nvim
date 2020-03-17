@@ -28,7 +28,7 @@ highlight NormalFloat guifg=#edf0f5 guibg=#ff0000
 autocmd BufWritePre * :%s/\s\+$//ge
 autocmd FileType neosnippet setlocal noexpandtab
 autocmd FileType vue syntax sync fromstart
-autocmd BufWritePost *.tex :!make
+" autocmd BufWritePost *.tex :mklatex
 autocmd FileType markdown set conceallevel=0
 autocmd FileType help set conceallevel=0
 autocmd BufNewFile,BufRead *.jl set filetype=julia
