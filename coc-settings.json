@@ -31,5 +31,5 @@
         }
     },
     "python.jediEnabled": false,
-    "snippets.userSnipptesDirectory": "/home/inazuma/.config/nvim/snippets"
+    "snippets.userSnipptesDirectory": "~/.config/nvim/snippets"
 }
