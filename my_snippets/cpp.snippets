@@ -1,12 +1,13 @@
 snippet hudou "Description" b
 cout << setprecision(15);
+endsnippet
 
 snippet digsum "digit sum" b
-ll digitSum(int n)
-{
+ll digitSum(int n) {
   if(n < 10) return n;
   else return n % 10 + digitSum(n / 10);
 }
+endsnippet
 
 snippet factoring "素因数分解" b
 vector<pair<ll, int>> factoring(ll a){
@@ -23,6 +24,7 @@ vector<pair<ll, int>> factoring(ll a){
   }
   return v;
 }
+endsnippet
 
 snippet gcd_lcm "gcd & lcm" b
 ll gcd(ll a, ll b)
@@ -31,12 +33,14 @@ ll gcd(ll a, ll b)
   else return gcd(b, a % b);
   // return (b == 0) ? a : gcd(b, a % b);
 }
+endsnippet
 
 ll lcm(ll a, ll b)
 {
   ll g = gcd(a, b);
   return a / g * b;
 }
+endsnippet
 
 snippet unionfind "UnionFind algorithm" b
 struct UnionFind {
@@ -94,11 +98,13 @@ struct UnionFind {
   }
 
 };
+endsnippet
 
 snippet logn "log" b
 long double logn(int base, int tv) {
   return log(tv) / log(base);
 }
+endsnippet
 
 snippet mint "mod int struct" b
 struct mint {
@@ -132,6 +138,7 @@ struct mint {
 };
 istream& operator>>(istream& is, const mint& a) { return is >> a.x;}
 ostream& operator<<(ostream& os, const mint& a) { return os << a.x;}
+endsnippet
 
 snippet comb_mod "calc combination mod" b
 const int MAX = 510000;
@@ -155,3 +162,4 @@ ll com(int n, int k){
     if (n < 0 || k < 0) return 0;
     return fac[n] * (finv[k] * finv[n - k] % MOD) % MOD;
 }
+endsnippet

@@ -41,7 +41,6 @@ if has('vim_starting') && dein#check_install()
   call dein#install()
 endif
 
-
 let s:rc_files = split(glob(s:NVIM_HOME . 'rc/*.vim'))
 for s:file in s:rc_files
   execute('source ' . s:file)

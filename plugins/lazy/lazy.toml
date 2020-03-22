@@ -113,7 +113,16 @@ hook_add = '''
   set smartindent
 '''
 
+# [[plugins]]
+# repo = 'puremourning/vimspector'
+# on_ft = ['python', 'javascript']
+# build = './install_gadget.py --enable-python --force-enable-node'
+
 [[plugins]]
-repo = 'puremourning/vimspector'
-on_ft = ['python', 'javascript']
-build = './install_gadget.py --enable-python --force-enable-node'
+repo = 'https://github.com/SirVer/ultisnips'
+on_i = 1
+
+[[plugins]]
+repo = 'https://github.com/honza/vim-snippets'
+on_i = 1
+

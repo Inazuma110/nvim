@@ -31,5 +31,8 @@
         }
     },
     "python.jediEnabled": false,
-    "snippets.userSnipptesDirectory": "~/.config/nvim/snippets"
+    "snippets.userSnipptesDirectory": "~/.config/nvim/my_snippets",
+    "snippets.ultisnips.directories": [
+      "my_snippets",
+    ]
 }

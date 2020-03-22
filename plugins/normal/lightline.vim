@@ -2,7 +2,7 @@ let g:lightline = {
       "\ 'colorscheme': 'tender',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'fugitive', 'gitgutter', 'filename' ] ]
+      \             [ 'cocstatus', 'fugitive', 'gitgutter', 'filename' ] ]
       \ },
       \ 'component_function': {
       \   'fugitive': 'LightLineFugitive',
@@ -14,6 +14,7 @@ let g:lightline = {
       \   'fileencoding': 'LightlineFileencoding',
       \   'mode': 'LightlineMode',
       \   'gitgutter': 'MyGitGutter',
+      \   'cocstatus': 'coc#status',
       \ },
       \ 'separator': { 'left': "\u2b80", 'right': "\u2b82" },
       \ 'subseparator': { 'left': "\u2b81", 'right': "\u2b83" }

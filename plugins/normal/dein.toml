@@ -292,5 +292,6 @@ repo = 'https://github.com/andymass/vim-matchup'
 [[plugins]]
 repo = 'vim-jp/vimdoc-ja'
 
-# [[plugins]]
-# repo = 'https://github.com/JuliaEditorSupport/julia-vim'
+[[plugins]]
+repo = 'https://github.com/JuliaEditorSupport/julia-vim'
+
