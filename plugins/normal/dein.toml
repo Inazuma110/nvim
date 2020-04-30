@@ -294,4 +294,8 @@ repo = 'vim-jp/vimdoc-ja'
 
 [[plugins]]
 repo = 'https://github.com/JuliaEditorSupport/julia-vim'
+hook_add = '''
+  inoremap <C-x><C-o> <C-x><C-o><C-x><C-o>
+
+'''
 

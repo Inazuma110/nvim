@@ -34,5 +34,6 @@
     "snippets.userSnipptesDirectory": "~/.config/nvim/my_snippets",
     "snippets.ultisnips.directories": [
       "my_snippets",
-    ]
+    ],
+    "python.jediEnabled": false
 }

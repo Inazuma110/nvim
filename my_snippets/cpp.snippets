@@ -109,17 +109,17 @@ endsnippet
 snippet mint "mod int struct" b
 struct mint {
   ll x; // typedef long long ll;
-  mint(ll x=0):x((x%mod+mod)%mod){}
+  mint(ll x=0):x((x%MOD+MOD)%MOD){}
   mint operator-() const { return mint(-x);}
   mint& operator+=(const mint a) {
-    if ((x += a.x) >= mod) x -= mod;
+    if ((x += a.x) >= MOD) x -= MOD;
     return *this;
   }
   mint& operator-=(const mint a) {
-    if ((x += mod-a.x) >= mod) x -= mod;
+    if ((x += MOD-a.x) >= MOD) x -= MOD;
     return *this;
   }
-  mint& operator*=(const mint a) { (x *= a.x) %= mod; return *this;}
+  mint& operator*=(const mint a) { (x *= a.x) %= MOD; return *this;}
   mint operator+(const mint a) const { return mint(*this) += a;}
   mint operator-(const mint a) const { return mint(*this) -= a;}
   mint operator*(const mint a) const { return mint(*this) *= a;}
@@ -131,8 +131,8 @@ struct mint {
     return a;
   }
 
-  // for prime mod
-  mint inv() const { return pow(mod-2);}
+  // for prime MOD
+  mint inv() const { return pow(MOD-2);}
   mint& operator/=(const mint a) { return *this *= a.inv();}
   mint operator/(const mint a) const { return mint(*this) /= a;}
 };
@@ -163,3 +163,4 @@ ll com(int n, int k){
     return fac[n] * (finv[k] * finv[n - k] % MOD) % MOD;
 }
 endsnippet
+
