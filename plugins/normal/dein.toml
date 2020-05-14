@@ -73,7 +73,7 @@ hook_add = '''
 
 # indent highlight
 [[plugins]]
-repo = 'git@github.com:Yggdroot/indentLine.git'
+repo = 'Yggdroot/indentLine'
 hook_add = '''
   let g:indentLine_char = '▏'
   let g:indentLine_first_char = '▏'
@@ -84,20 +84,20 @@ hook_add = '''
 
 # execute script
 [[plugins]]
-repo = 'git@github.com:thinca/vim-quickrun.git'
+repo = 'thinca/vim-quickrun'
 
 # highlight command f
 [[plugins]]
-repo = 'git@github.com:deris/vim-shot-f.git'
+repo = 'deris/vim-shot-f'
 
 
 # some plugins depend this
 [[plugins]]
-repo = 'git@github.com:kana/vim-operator-user.git'
+repo = 'kana/vim-operator-user'
 
 # yank highlight
 [[plugins]]
-repo = 'git@github.com:haya14busa/vim-operator-flashy.git'
+repo = 'haya14busa/vim-operator-flashy'
 hook_add = '''
   map y <Plug>(operator-flashy)
   nmap Y <Plug>(operator-flashy)$
@@ -105,7 +105,7 @@ hook_add = '''
 
 # open browser from vim
 [[plugins]]
-repo = 'git@github.com:tyru/open-browser.vim.git'
+repo = 'tyru/open-browser.vim'
 
 
 
@@ -295,7 +295,9 @@ repo = 'vim-jp/vimdoc-ja'
 [[plugins]]
 repo = 'https://github.com/JuliaEditorSupport/julia-vim'
 hook_add = '''
-  inoremap <C-x><C-o> <C-x><C-o><C-x><C-o>
-
+  let g:latex_to_unicode_tab = 0
+  let g:latex_to_unicode_auto = 1
+  noremap <expr> <F7> LaTeXtoUnicode#Toggle()
+  noremap! <expr> <F7> LaTeXtoUnicode#Toggle()
 '''
 

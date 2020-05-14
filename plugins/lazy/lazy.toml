@@ -23,14 +23,14 @@ hook_add = '''
 
 # preview markdown
 [[plugins]]
-repo = 'git@github.com:previm/previm.git'
+repo = 'previm/previm'
 hook_add = '''
   " autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 '''
 on_ft = ['md', 'markdown']
 
 [[plugins]]
-repo = 'git@github.com:posva/vim-vue.git'
+repo = 'posva/vim-vue'
 on_ft = 'vue'
 on_i = 1
 
@@ -45,10 +45,10 @@ on_i = 1
 
 # group programming
 # [[plugins]]
-# repo = 'git@github.com:Floobits/floobits-neovim.git'
+# repo = 'Floobits/floobits-neovim.git'
 
 [[plugins]]
-repo = 'git@github.com:othree/yajs.vim.git'
+repo = 'othree/yajs.vim'
 on_ft = 'javascript'
 on_i = 1
 
@@ -65,7 +65,7 @@ on_ft = 'toml'
 
 # presen
 [[plugins]]
-repo = 'git@github.com:thinca/vim-showtime.git'
+repo = 'thinca/vim-showtime'
 hook_add = '''
   function! s:MyShowtimeStart() abort
     ShowtimeStart
