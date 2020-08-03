@@ -159,3 +159,5 @@ let g:coc_snippet_next = '<C-k>'
 let g:UltiSnipsExpandTrigger= '<Nop>'
 let g:UltiSnipsJumpForwardTrigger='<C-k>'
 let g:UltiSnipsJumpBackwardTrigger='<Nop>'
+
+let g:default_julia_version = '1.3'

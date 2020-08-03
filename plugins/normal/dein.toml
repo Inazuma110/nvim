@@ -301,3 +301,5 @@ hook_add = '''
   noremap! <expr> <F7> LaTeXtoUnicode#Toggle()
 '''
 
+# [[plugins]]
+# repo = 'https://github.com/skanehira/translate.vim'
