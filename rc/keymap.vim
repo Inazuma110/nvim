@@ -18,5 +18,19 @@ tnoremap <C-[> <C-\><C-n>
 tnoremap <C-p> <UP>
 tnoremap <C-n> <DOWN>
 
+digraph aa 12354
+digraph ii 12356
+digraph uu 12358
+digraph ee 12360
+digraph oo 12362
+
+digraph Aa 12450
+digraph Ii 12452
+digraph Uu 12454
+digraph Ee 12456
+digraph Oo 12458
+
+digraph nn 12435
+digraph Nn 12531
 
 " let g:mapleader = ' '
