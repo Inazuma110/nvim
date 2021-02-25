@@ -18,6 +18,7 @@ set noswapfile
 set shortmess-=S
 set colorcolumn=80
 set conceallevel=0
+set mouse+=a
 " set winblend=5
 set wildmode=longest:full,full
 set helplang=ja,en
@@ -34,6 +35,7 @@ autocmd FileType vue syntax sync fromstart
 autocmd FileType markdown set conceallevel=0
 autocmd FileType help set conceallevel=0
 autocmd BufNewFile,BufRead *.jl set filetype=julia
+autocmd BufNewFile,BufRead *.tex set filetype=tex
 
 if has("persistent_undo")
   set undodir=$HOME/.undodir

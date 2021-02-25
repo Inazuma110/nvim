@@ -79,7 +79,7 @@ hook_add = '''
   let g:indentLine_first_char = '▏'
   " let g:indentLine_showFirstIndentLevel = -1
   autocmd Filetype markdown let g:indentLine_setConceal=0
-  autocmd Filetype plaintex let g:indentLine_setConceal=0
+  autocmd Filetype tex let g:indentLine_setConceal=0
 '''
 
 # execute script
@@ -187,63 +187,59 @@ hook_post_update = '''
 hook_add = '''
   set guifont=Hack\ Nerd\ Font\ Regular
   let g:firenvim_config = {
-     \ 'localSettings': {
-         \ '.*': {
-             \ 'selector': '',
-             \ 'priority': 0,
-         \ },
-         "\ 'tweetdeck\.twitter\.com': {
-         "    \ 'selector': '',
-         "    \ 'priority': 1,
-         "\ },
-         \ 'google\.com': {
-             \ 'selector': '',
-             \ 'priority': 1,
-         \ },
-         \ 'atcoder\.jp': {
-             \ 'selector': '',
-             \ 'priority': 1,
-         \ },
-         \ 'localhost:': {
-             \ 'selector': '',
-             \ 'priority': 1,
-         \ },
-     \ }
-  \ }
+    \ 'localSettings': {
+      \ '.*': {
+        \ 'selector': '',
+        \ 'priority': 0,
+        \ },
+      \ 'google\.com': {
+        \ 'selector': '',
+        \ 'priority': 1,
+        \ },
+      \ 'atcoder\.jp': {
+        \ 'selector': '',
+        \ 'priority': 1,
+        \ },
+      \ 'localhost:': {
+        \ 'selector': '',
+        \ 'priority': 1,
+        \ },
+      \ }
+    \ }
   function! OnUIEnter(event)
-      let l:ui = nvim_get_chan_info(a:event.chan)
-      if has_key(l:ui, 'client') && has_key(l:ui.client, "name")
-          if l:ui.client.name == "Firenvim"
-              set laststatus=0
-              set nonumber
-              set norelativenumber
-          endif
-      endif
-  endfunction
+    let l:ui = nvim_get_chan_info(a:event.chan)
+    if has_key(l:ui, 'client') && has_key(l:ui.client, "name")
+    if l:ui.client.name == "Firenvim"
+    set laststatus=0
+    set nonumber
+    set norelativenumber
+    endif
+    endif
+    endfunction
   autocmd UIEnter * call OnUIEnter(deepcopy(v:event))
 
-  au BufEnter overleaf*.txt set filetype=tex
-  au BufEnter *.txt set filetype=markdown
-  au BufEnter factory.quantx.io*.txt set filetype=python
+    au BufEnter overleaf*.txt set filetype=tex
+    au BufEnter *.txt set filetype=markdown
+    au BufEnter factory.quantx.io*.txt set filetype=python
 
-  let g:dont_write = v:false
-  function! My_Write(timer) abort
+    let g:dont_write = v:false
+    function! My_Write(timer) abort
     let g:dont_write = v:false
     write
-  endfunction
+    endfunction
 
-  function! Delay_My_Write() abort
+    function! Delay_My_Write() abort
     if g:dont_write
-      return
+    return
     end
     let g:dont_write = v:true
     call timer_start(10000, 'My_Write')
-  endfunction
+    endfunction
 
-  " au TextChanged * ++nested call Delay_My_Write()
-  " au TextChangedI * ++nested call Delay_My_Write()
+    " au TextChanged * ++nested call Delay_My_Write()
+    " au TextChangedI * ++nested call Delay_My_Write()
 '''
-
+#
 
 # [[plugins]]
 # repo = 'osyo-manga/vim-over'
@@ -259,6 +255,7 @@ hook_add = '''
 repo = 'https://github.com/itchyny/calendar.vim'
 hook_add = '''
   let g:calendar_google_calendar = 1
+  let g:calendar_google_task = 1
 '''
 
 # [[plugins]]
@@ -301,5 +298,6 @@ hook_add = '''
   noremap! <expr> <F7> LaTeXtoUnicode#Toggle()
 '''
 
-# [[plugins]]
-# repo = 'https://github.com/skanehira/translate.vim'
+[[plugins]]
+repo = 'https://github.com/skanehira/translate.vim'
+
