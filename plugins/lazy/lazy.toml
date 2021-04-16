@@ -26,6 +26,7 @@ hook_add = '''
 repo = 'previm/previm'
 hook_add = '''
   " autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+  let g:previm_open_cmd = "firefox"
 '''
 on_ft = ['md', 'markdown']
 

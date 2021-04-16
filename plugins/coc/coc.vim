@@ -160,4 +160,4 @@ let g:UltiSnipsExpandTrigger= '<Nop>'
 let g:UltiSnipsJumpForwardTrigger='<C-k>'
 let g:UltiSnipsJumpBackwardTrigger='<Nop>'
 
-let g:default_julia_version = '1.3'
+let g:default_julia_version = '1.5'
