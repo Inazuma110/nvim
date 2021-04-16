@@ -6,24 +6,6 @@
       "command": "docker-langserver",
       "filetypes": ["dockerfile"],
       "args": ["--stdio"]
-    },
-    "haskell": {
-      "command": "hie-wrapper",
-      "args": ["--lsp"],
-      "rootPatterns": [
-        "stack.yaml",
-        "cabal.config",
-        "package.yaml"
-      ],
-      "filetypes": [
-        "haskell",
-        "lhaskell"
-      ],
-      "initializationOptions": {
-        "languageServerHaskell": {
-          "hlintOn": true
-        }
-      }
     }
   },
   "python.jediEnabled": false,
@@ -31,6 +13,5 @@
   "snippets.ultisnips.directories": [
     "my_snippets"
   ],
-  "python.jediEnabled": false,
   "clangd.fallbackFlags": ["-std=gnu++17"]
 }

@@ -43,3 +43,5 @@ if has("persistent_undo")
 endif
 
 command! Reboot source ~/.config/nvim/init.vim
+
+colorscheme tender
