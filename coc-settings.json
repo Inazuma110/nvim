@@ -6,7 +6,7 @@
       "command": "docker-langserver",
       "filetypes": ["dockerfile"],
       "args": ["--stdio"]
-    }
+    },
   },
   "python.jediEnabled": false,
   "snippets.userSnipptesDirectory": "~/.config/nvim/my_snippets",

@@ -15,8 +15,8 @@ hook_add = '''
 '''
 
 # project tree
-[[plugins]]
-repo = 'scrooloose/nerdtree'
+# [[plugins]]
+# repo = 'scrooloose/nerdtree'
 
 # filetype
 [[plugins]]
@@ -107,76 +107,8 @@ hook_add = '''
 [[plugins]]
 repo = 'tyru/open-browser.vim'
 
-
-
-# lsp
-# [[plugins]]
-# repo = 'autozimu/LanguageClient-neovim'
-# build = 'bash install.sh'
-# rev = 'next'
-# hook_add = '''
-#     " set completefunc=LanguageClient#complete
-#     let s:node = empty($XDG_CONFIG_HOME) ? expand('$HOME/.config') : $XDG_CONFIG_HOME
-#     let s:julia_exe = '/usr/local/bin/julia'
-#     let s:julia_lsp_script = expand('~') . '/.config/nvim/plugins/normal/startlsp.jl'
-#
-#     let g:LanguageClient_serverCommands = {
-#        \ 'c': ['clangd', '-compile-commands-dir=' . getcwd() . '/build'],
-#         "\ 'cpp': ['clangd', '-compile-commands-dir=' . getcwd() . '/build'],
-#        \ 'cpp': ['clangd', '--header-insertion=never'],
-#        \ 'python': ['pyls'],
-#         "\ 'java': ['/usr/local/bin/jdtls', '-data', getcwd()]
-#        \ 'java': ['/home/inazuma/java-language-server/dist/lang_server_linux.sh'],
-#        \ 'julia': [s:julia_exe, '--startup-file=no', s:julia_lsp_script],
-#    \ }
-#
-#     " not stop completion $ & /
-#     set hidden
-#     set signcolumn=yes
-#     let g:LanguageClient_hoverPreview = "Never"
-#
-#     nnoremap <F5> :call LanguageClient_contextMenu()<CR>
-#     " Or map each action separately
-#     nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-#     nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-#     nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
-#     command! LSPFormat :call LanguageClient#textDocument_formatting()
-#
-#     let g:LanguageClient_diagnosticsDisplay = {
-#     \   1:{
-#     \         "name": "Error",
-#     \         "texthl": "ALEError",
-#     \         "signText": "💩",
-#     \         "signTexthl": "ALEErrorSign",
-#     \         "virtualTexthl": "Error",
-#     \     },
-#    \ }
-# '''
-
-# [[plugins]]
-# repo = 'https://github.com/kusabashira/vim-nicomment.git'
-# hook_add = '''
-#   " It generates claps
-#   let g:nicomment_comment_generator = {}
-#   function! g:nicomment_comment_generator.generate()
-#     if !has_key(self, 'rand')
-#       " It requires vital.vim
-#       let V = vital#of('vital')
-#       let Xor128 = V.import('Random.Xor128')
-#       let self.rand = Xor128.new_generator()
-#     endif
-#
-#     if abs(self.rand.next() % 10) == 0
-#       return repeat('8', abs(self.rand.next() % 20) + 4)
-#     else
-#       return v:null
-#     endif
-#   endfunction
-# '''
-
 [[plugins]]
 repo = 'https://github.com/willelz/badapple.nvim.git'
-
 
 [[plugins]]
 repo = 'https://github.com/glacambre/firenvim.git'
@@ -300,3 +232,37 @@ hook_add = '''
 [[plugins]]
 repo = 'https://github.com/skanehira/translate.vim'
 
+# [[plugins]]
+# repo = 'https://github.com/gelguy/wilder.nvim'
+# hook_add = '''
+# " default keys
+# call wilder#setup({
+#       \ 'modes': [':', '/', '?'],
+#       \ 'next_key': '<Tab>',
+#       \ 'previous_key': '<S-Tab>',
+#       \ 'accept_key': '<Down>',
+#       \ 'reject_key': '<Up>',
+#       \ })
+# '''
+
+[[plugins]]
+repo = 'https://github.com/thinca/vim-themis'
+
+[[plugins]]
+repo = 'https://github.com/vim-denops/denops.vim'
+
+
+# [[plugins]]
+# repo = 'https://github.com/vim-skk/skkeleton'
+# hook_add = '''
+# imap <C-j> <Plug>(skkeleton-toggle)
+# cmap <C-j> <Plug>(skkeleton-toggle)
+#
+# call skkeleton#config({
+# \'eggLikeNewline':v:true
+# \})
+# '''
+
+
+[[plugins]]
+repo = 'https://github.com/brglng/vim-im-select'
