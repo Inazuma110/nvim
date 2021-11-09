@@ -266,3 +266,6 @@ repo = 'https://github.com/vim-denops/denops.vim'
 
 [[plugins]]
 repo = 'https://github.com/brglng/vim-im-select'
+
+[[plugins]]
+repo = 'https://github.com/github/copilot.vim'

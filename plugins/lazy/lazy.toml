@@ -89,9 +89,9 @@ hook_add = '''
 on_ft = 'json'
 
 
-[[plugins]]
-repo = 'https://github.com/vim-scripts/fcitx.vim'
-on_i = 1
+# [[plugins]]
+# repo = 'https://github.com/vim-scripts/fcitx.vim'
+# on_i = 1
 
 [[plugins]]
 repo = 'rhysd/vim-gfm-syntax'
