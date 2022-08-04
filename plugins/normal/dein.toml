@@ -251,21 +251,22 @@ repo = 'https://github.com/thinca/vim-themis'
 [[plugins]]
 repo = 'https://github.com/vim-denops/denops.vim'
 
+# don't nested
+[[plugins]]
+repo = 'https://github.com/lambdalisue/guise.vim'
+depends = ['denops.vim']
 
 # [[plugins]]
-# repo = 'https://github.com/vim-skk/skkeleton'
-# hook_add = '''
-# imap <C-j> <Plug>(skkeleton-toggle)
-# cmap <C-j> <Plug>(skkeleton-toggle)
-#
-# call skkeleton#config({
-# \'eggLikeNewline':v:true
-# \})
-# '''
-
-
-[[plugins]]
-repo = 'https://github.com/brglng/vim-im-select'
+# repo = 'https://github.com/brglng/vim-im-select'
 
 [[plugins]]
 repo = 'https://github.com/github/copilot.vim'
+
+[[plugins]]
+repo = 'https://github.com/honza/vim-snippets'
+
+# [[plugins]]
+# repo = 'https://github.com/lilydjwg/fcitx.vim'
+# hook_add = '''
+#   let g:fcitx5_remote = "/usr/bin/fcitx5-remote"
+# '''

@@ -50,6 +50,13 @@ autocmd BufNewFile,BufRead *.txt set filetype=help
 "   endif
 " endif
 
+if executable('fcitx')
+  augroup fcitx_autodisable
+    autocmd!
+    autocmd InsertLeave * call system('fcitx-remote -c')
+  augroup END
+endif
+
 if has("persistent_undo")
   set undodir=$HOME/.undodir
   set undofile

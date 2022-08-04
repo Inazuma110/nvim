@@ -89,9 +89,9 @@ hook_add = '''
 on_ft = 'json'
 
 
-# [[plugins]]
-# repo = 'https://github.com/vim-scripts/fcitx.vim'
-# on_i = 1
+[[plugins]]
+repo = 'https://github.com/vim-scripts/fcitx.vim'
+on_i = 1
 
 [[plugins]]
 repo = 'rhysd/vim-gfm-syntax'
@@ -123,9 +123,6 @@ hook_add = '''
 repo = 'https://github.com/SirVer/ultisnips'
 on_i = 1
 
-[[plugins]]
-repo = 'https://github.com/honza/vim-snippets'
-on_i = 1
 
 [[plugins]]
 repo = '~/programming/homeposition.vim'
@@ -135,4 +132,6 @@ on_ft = ['homeposition', 'hp']
 repo = 'https://github.com/q60/vim-brainfuck'
 on_ft = ['bf', 'brainfuck']
 
-
+[[plugins]]
+repo = 'https://github.com/lervag/vimtex'
+on_ft = ['tex', 'latex', 'md', 'markdown']
