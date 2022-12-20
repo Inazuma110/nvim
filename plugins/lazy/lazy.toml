@@ -89,9 +89,9 @@ hook_add = '''
 on_ft = 'json'
 
 
-[[plugins]]
-repo = 'https://github.com/vim-scripts/fcitx.vim'
-on_i = 1
+# [[plugins]]
+# repo = 'https://github.com/vim-scripts/fcitx.vim'
+# on_i = 1
 
 [[plugins]]
 repo = 'rhysd/vim-gfm-syntax'
@@ -133,5 +133,14 @@ repo = 'https://github.com/q60/vim-brainfuck'
 on_ft = ['bf', 'brainfuck']
 
 [[plugins]]
+repo = 'https://github.com/peterbjorgensen/sved'
+on_ft = ['tex', 'latex', 'md', 'markdown']
+
+[[plugins]]
 repo = 'https://github.com/lervag/vimtex'
 on_ft = ['tex', 'latex', 'md', 'markdown']
+depends = ['peterbjorgensen/sved']
+hook_add = """
+  let g:vimtex_syntax_enabled=0
+  let g:vimtex_view_general_viewer = 'evince'
+"""

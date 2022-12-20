@@ -1,4 +1,3 @@
-syntax on
 
 filetype plugin indent on
 set sh=zsh
@@ -39,24 +38,6 @@ autocmd BufNewFile,BufRead *.tex set filetype=tex
 autocmd BufNewFile,BufRead *.hp set filetype=homeposition
 autocmd BufNewFile,BufRead *.txt set filetype=help
 
-" after/ftplugin/help.vim
-" if &l:buftype !=# 'help'
-"   setlocal list tabstop=8 shiftwidth=8 softtabstop=8 noexpandtab textwidth=78
-"   if exists('+colorcolumn')
-"     setlocal colorcolumn=+1
-"   endif
-"   if has('conceal')
-"     setlocal conceallevel=0
-"   endif
-" endif
-
-if executable('fcitx')
-  augroup fcitx_autodisable
-    autocmd!
-    autocmd InsertLeave * call system('fcitx-remote -c')
-  augroup END
-endif
-
 if has("persistent_undo")
   set undodir=$HOME/.undodir
   set undofile
@@ -65,3 +46,4 @@ endif
 command! Reboot source ~/.config/nvim/init.vim
 
 colorscheme tender
+syntax on
