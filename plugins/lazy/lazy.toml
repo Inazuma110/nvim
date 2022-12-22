@@ -139,8 +139,11 @@ on_ft = ['tex', 'latex', 'md', 'markdown']
 [[plugins]]
 repo = 'https://github.com/lervag/vimtex'
 on_ft = ['tex', 'latex', 'md', 'markdown']
-depends = ['peterbjorgensen/sved']
+depends = ['sved']
 hook_add = """
   let g:vimtex_syntax_enabled=0
   let g:vimtex_view_general_viewer = 'evince'
+"""
+hook_post_source = """
+  VimtexCompile
 """
