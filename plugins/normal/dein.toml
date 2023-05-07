@@ -225,8 +225,6 @@ hook_add = '''
   noremap! <expr> <F7> LaTeXtoUnicode#Toggle()
 '''
 
-[[plugins]]
-repo = 'https://github.com/skanehira/translate.vim'
 
 # [[plugins]]
 # repo = 'https://github.com/gelguy/wilder.nvim'
@@ -246,6 +244,10 @@ repo = 'https://github.com/thinca/vim-themis'
 
 [[plugins]]
 repo = 'https://github.com/vim-denops/denops.vim'
+
+[[plugins]]
+repo = 'https://github.com/skanehira/denops-translate.vim'
+depend = ['denops.vim']
 
 # don't nested
 [[plugins]]
@@ -277,3 +279,8 @@ hook_add = '''
   vmap g<C-a> g<Plug>(dial-increment)
   vmap g<C-x> g<Plug>(dial-decrement)
 '''
+
+[[plugins]]
+repo = 'https://github.com/zalgo3/vim-chatgpt'
+rev = 'nvim'
+

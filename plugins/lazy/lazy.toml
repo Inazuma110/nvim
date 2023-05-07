@@ -138,7 +138,7 @@ on_ft = ['tex', 'latex', 'md', 'markdown']
 
 [[plugins]]
 repo = 'https://github.com/lervag/vimtex'
-on_ft = ['tex', 'latex', 'md', 'markdown']
+on_ft = ['tex', 'latex']
 depends = ['sved']
 hook_add = """
   let g:vimtex_syntax_enabled=0
